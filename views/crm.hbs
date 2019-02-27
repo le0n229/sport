@@ -1,0 +1,60 @@
+<div>
+
+    <div class="user-container">
+        {{#each users}}
+        <label>Клиенты</label><br>
+        <ul>
+        <li></li>
+
+        </ul>
+    </div>
+    <div>
+        <label>Подписки</label><br>
+        <input type="text" name="subscribe">
+    </div>
+    <div>
+        <label>Заказы</label><br>
+        <input type="text" name="analysis">
+    </div>
+    <div>
+        <label>Результаты анализов</label><br>
+        <input type="text" name="analysis">
+    </div>
+    <div>
+        <label>Заказы</label><br>
+        <input type="text" name="analysis">
+    </div>
+</div>
+<div>
+
+</div>
+
+
+<h1>CRM</h1>
+<h2>Список клиентов</h2>
+<table border="1" cellspacing="0">
+    <thead>
+        <tr>
+            <th>Имя</th>
+            {{!-- <th>Autor</th>
+        <th>Pool</th> --}}
+            <th>Логин</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each users}}
+        <tr data-id={{this.name}}>
+            {{!-- <td>{{this._id}}</td>
+    <td>{{this.autor}}</td> --}}
+            <td>{{this.login}}</td>
+            <td>
+                {{!-- <a href="/api/index/{{this._id}}" >D</a> --}}
+
+                <button id="subBut">Посмотреть статистику</button>
+
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+
+</table>
