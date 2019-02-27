@@ -1,19 +1,26 @@
 const express = require('express');
 const router = express.Router();
-
+const Clients = require('../models/clients');
 
 
 
 
 
 router.route('/')
-    .get((req, res) => {
-        res.render('crm')
+    .get(async (req, res) => {
+        const Client = await Clients.find();
+        res.render('crm', { Client })
     })
-    .post((req, res) => {
-        
-        res.send(200, userCart)
-    })
+
+
+router.post('/:id', async function (req, res) {
+
+    const clientView = await Clients.findById(req.params.id);
+
+
+    res.send(200, { clientView })
+})
+
 
 
 module.exports = router;

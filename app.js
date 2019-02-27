@@ -9,6 +9,40 @@ const usersRouter = require('./routes/users');
 const crmRouter = require('./routes/crm');
 
 const app = express();
+const session = require('express-session');
+const mongoose = require('mongoose');
+
+
+// const app = express();
+
+mongoose.connect(
+  'mongodb://localhost:27017/supersport',
+  {
+    useNewUrlParser: true
+  });
+
+
+app.use(session({
+  // store: new RedisStore({
+  //   client,
+  //   host: 'localhost',
+  //   port: 6379,
+  //   ttl: 260
+  // }),
+  key: 'user_sid',
+  secret: 'anything here',
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    expires: 600000
+  }
+}));
+
+
+// const indexRouter = require('./routes/index');
+// const usersRouter = require('./routes/users');
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
