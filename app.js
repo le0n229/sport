@@ -5,11 +5,12 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const session = require('express-session');
 const mongoose = require('mongoose');
+const MongoStore = require('connect-mongo')(session);
 
 
 const app = express();
 
-mongoose.connect(
+const db = mongoose.connect(
   'mongodb://localhost:27017/supersport',
   {
     useNewUrlParser: true
@@ -17,11 +18,12 @@ mongoose.connect(
 
 
 app.use(session({
-  // store: new RedisStore({
-  //   client,
-  //   host: 'localhost',
-  //   port: 6379,
-  //   ttl: 260
+  // store: new MongoStore({
+  //   mongooseConnection: mongoose.connection,
+  //   collection: 'session',
+  //   autoRemove: 'interval',
+  //   autoRemoveInterval: 10
+
   // }),
   key: 'user_sid',
   secret: 'anything here',
@@ -52,12 +54,12 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
