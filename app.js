@@ -3,6 +3,25 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const session = require('express-session');
+
+
+
+app.use(session({
+  // store: new RedisStore({
+  //   client,
+  //   host: 'localhost',
+  //   port: 6379,
+  //   ttl: 260
+  // }),
+  key: 'user_sid',
+  secret: 'anything here',
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    expires: 600000
+  }
+}));
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
