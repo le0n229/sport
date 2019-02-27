@@ -8,5 +8,9 @@ const clientSchema = mongoose.Schems({
     email: String,
     address: String,
     phone: Number,
-    age: Number
+    age: Number,
+    height: Number,
+    weight: Number
 })
+
+module.exports = mongoose.model('Client', clientSchema);
