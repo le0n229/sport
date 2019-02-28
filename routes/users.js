@@ -35,14 +35,12 @@ router.post('/neworder', async function (req, res, next) {
     userName: req.session.user.userName,
     createdAt: Date.now(),
     status: 'Открыт',
-    // orderNumber: 0,
     deliveryDate: req.body.deliveryDate,
     deliveryTime: req.body.deliveryTime,
     address: req.body.deliveryAddress,
     firstName: req.session.user.firstName,
     lastName: req.session.user.lastName,
-    phone: req.session.user.phone,
-    // orderAmount: 0,
+    phone: req.session.user.phone,  
     orderTitle: req.body.serviceType,
   });
   await order.save();
