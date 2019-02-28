@@ -1,8 +1,6 @@
 <h1>Администрирование</h1>
 
-
 <table width="100%" border="1" cellpadding="4">
-
     <tr>
         <th>Номер заказа</th>
         <th>Тип заказа</th>
@@ -24,11 +22,9 @@
         <td>{{this.phone}}</td>
         <td>{{this.orderAmount}} RUB</td>
         <td>
-            <form action="/admins" method="POST">
-                <input type="date" name="desired_time" value="2018-05-05">
-            </form>
+            <input class="devileryDate" type="date" name="desired_time" value="2018-05-05">
         </td>
-        <td> 
+        <td>
             <select name="" id="">
                 <option value="" selected hidden>{{this.deliveryTime}}</option>
                 <option value="timePeriod1">9:00-12:00</option>

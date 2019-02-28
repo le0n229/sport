@@ -7,7 +7,7 @@ const Test = require('../models/tests');
 // async function base (){
 
 //     let newClient = new Client({
-        
+
 //         userName: 'Dim',
 //         password: '123',
 //         firstName: 'D',
@@ -23,20 +23,19 @@ const Test = require('../models/tests');
 // }
 
 // base()
-async function test (){
+async function test() {
 
-const newTest = new Test({
-    userName: 'Masha',
-    createdAt: '01/03/2019',
-    updatedAt: '01.08/2019',
-    status: 'String',
-    totalProtein: '1', 
-    creatinine: '2',
-    urea: '5',
-    totalCholesterol: '8',
-    totalBilirubin: '6'
-})
-await newTest.save();
+    const newTest = new Test({
+        userName: 'Masha',
+        totalProtein: '1',
+        creatinine: '2',
+        urea: '5',
+        totalCholesterol: '8',
+        totalBilirubin: '6',
+        date: '01.05.2019'
+
+    })
+    await newTest.save();
 }
 
 test()

@@ -1,10 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const Users = require('../models/clients');
+const Order = require('../models/order');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'SuperSport' });
+  res.render('index', req.session.user);
 });
 
 // module.exports = router;
@@ -19,7 +20,7 @@ router.post('/login', async (req, res) => {
     res.redirect('/login');
   } else {
     req.session.user = user;
-    res.redirect('/');
+    res.redirect('/users');
   }
 
 });
@@ -27,7 +28,7 @@ router.post('/login', async (req, res) => {
 
 
 router.get('/login', function (req, res, next) {
-  res.render('login');
+  res.render('login',req.session.user);
 });
 
 
@@ -60,12 +61,16 @@ router.get('/logout', function (req, res, next) {
   res.redirect('/');
 });
 
-router.get('/neworder', function (req, res, next) {
-  res.render('neworder');
-});
 
-router.get('/courier', function (req, res, next) {
-  res.render('courier');
-});
+router.get('/courier', async (req, res) => {
+  const orderInfo = await Order.find();
+  res.render('courier', {orderInfo})
+})
+
+router.post('/courier', async (req, res) => { 
+  console.log('>>>>>>>>>>>>>>'+req.body.delivered)
+  
+  res.render('courier', {orderInfo})
+})
 
 module.exports = router;

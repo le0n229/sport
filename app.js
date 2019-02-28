@@ -24,6 +24,13 @@ hbs.registerHelper('ifCond', function(v1, v2, options) {
   return options.inverse(this);
 });
 
+hbs.registerHelper('ifundef', function(v1, options) {
+  if(v1 == undefined) {
+    return options.fn(this);
+  }
+  return options.inverse(this);
+});
+
 // const app = express();
 
 const db = mongoose.connect(
@@ -48,12 +55,6 @@ app.use(session({
     expires: 600000
   }
 }));
-
-
-
-
-
-
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

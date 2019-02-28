@@ -12,7 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const respBody = await response.json();
 
-            console.log('respons', respBody);
+  //          console.log('respons', respBody);
+
+            const statRow = document.getElementById('tabTest')
+            
+
             for (let i of respBody) {
                 const newRow = document.createElement('tr');
                 newRow.id = i._id
@@ -27,22 +31,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     const row = document.getElementById(idRow)
             
                     row.insertCell().innerHTML = i.userName
+                    row.insertCell().innerHTML = i.date
                     row.insertCell().innerHTML = i.totalProtein
                     row.insertCell().innerHTML = i.totalBilirubin
                 }
             }
 
-            //   newRow['data-name'] = respBody.userName;
-
-            // newRow.innerHTML = `
-            //     <td> ${respBody.userName}</td>
-            //     <td>r</td>
-            //     <td>t</td>
-            // `
-            // document.getElementsByTagName('table')[1].appendChild(newRow);
-            //console.log('RRRRRRRRRRRR',respBody)
-
-
         })
     }
 })
+
