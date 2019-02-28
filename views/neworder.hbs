@@ -1,5 +1,5 @@
 <h2>Вызов курьера:</h2><br>
-<form action="/neworder" method="POST">
+<form action="neworder" method="POST">
     <label for="serviceType">Наименование услуги:</label><br>
     <select name="serviceType" id="serviceType">
         <option value="getAnaliz">Вызвать курьера с прибором для сбора анализа</option>
@@ -17,11 +17,11 @@
 
     <label for="deliveryTime">Время доставки:</label><br>
     <select name="deliveryTime" id="deliveryTime">
-        <option value="timePeriod1">9:00-12:00</option>
-        <option value="timePeriod1">12:00-15:00</option>
-        <option value="timePeriod1">15:00-18:00</option>
-        <option value="timePeriod1">18:00-21:00</option>
-        <option value="timePeriod1">21:00-23:00</option>
+        <option value="9:00-12:00<">9:00-12:00</option>
+        <option value="12:00-15:00">12:00-15:00</option>
+        <option value="15:00-18:00">15:00-18:00</option>
+        <option value="18:00-21:00">18:00-21:00</option>
+        <option value="21:00-23:00">21:00-23:00</option>
     </select><br><br>
     <input type="submit" value="Сохранить"></input>
 </form>
