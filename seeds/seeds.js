@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Client = require('../models/clients');
 const Test = require('../models/tests');
+const Order = require('../models/order');
 
 const faker = require('faker');
 
@@ -42,6 +43,19 @@ mongoose.connect(
         })
 
         await test.save();
+        
+        const order = await new Order({
+            userName: faker.name.title,
+            createdAt: faker.date.past(),
+            updatedAt: faker.date.between(),
+            status: 'client',
+            оrderNumber: faker.random.number(),
+            deliveryDate: faker.date.past(),
+            deliveryTime: faker.date.soon(),
+            address: faker.address.streetAddress()
+        })
+
+        await order.save();
     }
     mongoose.connection.close();
 })();

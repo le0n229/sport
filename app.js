@@ -23,7 +23,6 @@ app.use(session({
     collection: 'session',
     autoRemove: 'interval',
     autoRemoveInterval: 10
-
   }),
   key: 'user_sid',
   secret: 'anything here',
