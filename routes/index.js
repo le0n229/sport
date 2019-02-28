@@ -84,5 +84,4 @@ router.post('/courier/:id', async (req, res) => {
   res.redirect('/courier');
 })
 
-
 module.exports = router;

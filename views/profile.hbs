@@ -2,29 +2,29 @@
 <form action="profile" method="POST">
 
     <label for="firstName">Ваше имя:</label><br>
-    <input name="firstName" id="firstName"  value={{firstName}}></input><br><br>
+    <input name="firstName" id="firstName"  value={{user.firstName}}></input><br><br>
 
     <label for="lastName">Ваша фамилия:</label><br>
-    <input name="lastName" id="lastName" value={{lastName}}></input><br><br>
+    <input name="lastName" id="lastName" value={{user.lastName}}></input><br><br>
 
     <label for="phone">Телефон</label><br>
-    <input name="phone" id="phone" value={{phone}} ></input><br><br>
+    <input name="phone" id="phone" value={{user.phone}} ></input><br><br>
 
     <label for="gender">Пол: </label>
     {{!-- <form> --}}
        
-        <span><input name="gender" for="gender" type="radio" value="men" {{#ifCond gender 'men'}} checked {{/ifCond}}   >муж    </input></span>
-        <span></span><input name="gender" for="gender" type="radio" value="woman" {{#ifCond gender 'woman'}} checked {{/ifCond}}>    жен</input></span>
+        <span><input name="gender" for="gender" type="radio" value="men" {{#ifCond user.gender 'men'}} checked {{/ifCond}}   >муж    </input></span>
+        <span></span><input name="gender" for="gender" type="radio" value="woman" {{#ifCond user.gender 'woman'}} checked {{/ifCond}}>    жен</input></span>
     {{!-- </form> --}}
 <br>
     <label for="height">Ваш рост:</label><br>
-    <input name="height" id="height" value={{height}} ></input><br><br>
+    <input name="height" id="height" value={{user.height}} ></input><br><br>
 
     <label for="weight">Ваш вес:</label><br>
-    <input name="weight" id="weight" value={{weight}}></input><br><br>
+    <input name="weight" id="weight" value={{user.weight}}></input><br><br>
 
     <label for="age">Ваш возраст:</label><br>
-    <input name="age" id="age" value={{age}}></input><br><br>
+    <input name="age" id="age" value={{user.age}}></input><br><br>
 
     <input type="submit" value="Сохранить"></input>
 
