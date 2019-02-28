@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<h1>Администрирование</h1>
+
+<table width="100%" border="1" cellpadding="4">
+    <tr>
+        <th>Номер заказа</th>
+        <th>Дата и время заказа</th>
+        <th>ФИО</th>
+        <th>Телефон</th>
+        
+        <th>Сумма заказа</th>
+        <th>Желаемая дата доставки</th>
+        <th>Статус</th>
+        <th>Статус заказа</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>23.05.2018</td>
+        <td>Василий Сергеевич Петров</td>
+        <td>8-905-283-24-98</td>
+        
+        <td>11567 RUB</td>
+        <td>24.05.2018<br>
+            <form action="" method="POST">
+                <input type="text" name="desired_time"><br>
+                <input type="submit" value="Изменить">
+            </form>
+        </td>
+        <td>Открыт</td>
+        <td>
+            <form action="file:///home/vadim/elbrus/w6/sport/views/admin.html" method="POST">
+                <select name="" id="">
+                    <option>Выставить статус</option>
+                    <option value="open">Открыт</option>
+                    <option value="done">Завершен</option>
+                    <option value="to_courier">Передан курьеру</option>
+                    <option value="delivered">Вручен покупателю</option>
+                    <option value="cancelled">Аннулирован</option>
+                </select>
+                <input type="submit" value="Submit">
+            </form>
+        </td>
+    </tr>
+</table>

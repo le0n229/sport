@@ -29,12 +29,6 @@ mongoose.connect(
         // await client.save();
 
         const test = await new Test({
-            userName: faker.name.title,
-            createdAt: faker.date.past(),
-            updatedAt: faker.date.between(),
-            status: 'client',
-            оrderNumber: faker.random.number(),
-            deliveryDate: faker.date.past(),
             totalProtein: faker.random.number(),
             creatinine: faker.random.number(),
             urea: faker.random.number(),
@@ -49,7 +43,7 @@ mongoose.connect(
             createdAt: faker.date.past(),
             updatedAt: faker.date.between(),
             status: 'client',
-            оrderNumber: faker.random.number(),
+            orderNumber: faker.random.number(),
             deliveryDate: faker.date.past(),
             deliveryTime: faker.date.soon(),
             address: faker.address.streetAddress()
