@@ -8,28 +8,36 @@ document.addEventListener('DOMContentLoaded', () => {
             const target = event.target
             const name = target.closest("tr").getAttribute("data-name")
             console.log('click///////////', name)
-            const response = await fetch('crm/' + name, {
-                method: 'post',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({})
-            });
-            const respBody = await response.json({});
+            const response = await fetch('crm/' + name);
 
+            const respBody = await response.json();
 
-            const newRow = document.createElement('tr');
-            newRow['data-name'] = respBody.userName;
-            newRow.innerHTML = `
-                <td> ${respBody.userName}</td>
-                <td>r</td>
-                <td>t</td>
-            `
-            document.getElementsByTagName('table')[1].appendChild(newRow);
-            //console.log('RRRRRRRRRRRR',respBody)
+  //          console.log('respons', respBody);
 
+            const statRow = document.getElementById('tabTest')
+            
+
+            for (let i of respBody) {
+                const newRow = document.createElement('tr');
+                newRow.id = i._id
+                tabTest.appendChild(newRow)
+                
+                const idRow = i._id
+                console.log('didididididididididiid', idRow)
+                
+                for (let j = 0; j <1; j++) {
+                    console.log(j)
+                    const newCol = document.createElement('td')
+                    const row = document.getElementById(idRow)
+            
+                    row.insertCell().innerHTML = i.userName
+                    row.insertCell().innerHTML = i.date
+                    row.insertCell().innerHTML = i.totalProtein
+                    row.insertCell().innerHTML = i.totalBilirubin
+                }
+            }
 
         })
     }
 })
+

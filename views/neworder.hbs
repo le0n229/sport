@@ -2,22 +2,22 @@
 <form action="neworder" method="POST">
     <label for="serviceType">Наименование услуги:</label><br>
     <select name="serviceType" id="serviceType">
-        <option value="getAnaliz">Вызвать курьера с прибором для сбора анализа</option>
-        <option value="putAnaliz">Вызвать курьера забрать анализ</option>
-        <option value="service3">Услуга 3</option>
-        <option value="service4">Услуга 4</option>
-        <option value="service5">Услуга 5</option>
+        <option value="Вызвать курьера с пробиркой">Вызвать курьера с пробиркой</option>
+        <option value="Вызвать курьера забрать анализ">Вызвать курьера забрать анализ</option>
+        <option value="Вызвать курьера с витаминами">Вызвать курьера с витаминами</option>
+        <option value="консультация у врача">консультация у врача</option>
+        <option value="Дополнительные исследования">Дополнительные исследования</option>
     </select><br><br>
 
     <label for="deliveryAddress">Адрес доставки:</label><br>
-    <input name="deliveryAddress" id="deliveryAddress"></input><br><br>
+    <input name="deliveryAddress" id="deliveryAddress" required></input><br><br>
 
     <label  for="deliveryDate">Дата доставки:</label><br>
-    <input type="date" name="deliveryDate" id="deliveryDate"></input><br><br>
+    <input type="date" name="deliveryDate" id="deliveryDate" required></input><br><br>
 
     <label for="deliveryTime">Время доставки:</label><br>
     <select name="deliveryTime" id="deliveryTime">
-        <option value="9:00-12:00<">9:00-12:00</option>
+        <option value="9:00-12:00">9:00-12:00</option>
         <option value="12:00-15:00">12:00-15:00</option>
         <option value="15:00-18:00">15:00-18:00</option>
         <option value="18:00-21:00">18:00-21:00</option>

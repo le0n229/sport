@@ -6,7 +6,8 @@ const testSchema = mongoose.Schema({
     creatinine: Number,
     urea: Number,
     totalCholesterol: Number,
-    totalBilirubin: Number
+    totalBilirubin: Number,
+    date:{type:Date}
 })
 
 module.exports = mongoose.model('Test', testSchema);
