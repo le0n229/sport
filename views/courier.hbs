@@ -2,8 +2,6 @@
 <hr>
 <h2>Текущие заказы</h2><br>
 <hr>
-
-{{#each orderInfo}}
 <table class="table table-bordered table-primary" border="1">
     <tr>
         <th>номер заказа</th>
@@ -14,8 +12,10 @@
         <th>Фамилия</th>
         <th>телефон</th>
         <th>доставлен</th>
+        <th>статус</th>
         <th>отмена</th>
     </tr>
+    {{#each orderInfo}}
     <tr>
         <td>{{this.orderNumber}}</td>
         <td>{{this.deliveryAdress}}</td>
@@ -24,8 +24,23 @@
         <td>{{this.firstName}}</td>
         <td>{{this.lastName}}</td>
         <td>{{this.phone}}</td>
-        <td><button name="delivered" id="delivered">доставлен</button></td>
-        <td><button name="cancel" id="cancel">отмена</button></td>
+        <td>
+
+            <button method="POST" name="delivered" id="delivered">доставлен</button>
+
+            <input action="/courier" type="button" value="input" />
+        </td>
+
+        <td>{{this.status}}</td>
+        <td>
+            {{!-- <button action="/courier" name="cancel" method="POST" id="cancel">отмена</button> --}}
+            <form method="post" action='/courier:{{this.orderNumber}}'>
+                <button type="submit" name="submit_param" value="submit_value"></button>
+            </form>
+
+
+
+        </td>
     </tr>
+    {{/each}}
 </table>
-{{/each}}
