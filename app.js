@@ -24,6 +24,13 @@ hbs.registerHelper('ifCond', function(v1, v2, options) {
   return options.inverse(this);
 });
 
+hbs.registerHelper('ifundef', function(v1, options) {
+  if(v1 == undefined) {
+    return options.fn(this);
+  }
+  return options.inverse(this);
+});
+
 // const app = express();
 
 const db = mongoose.connect(
@@ -38,14 +45,14 @@ app.use(session({
     mongooseConnection: mongoose.connection,
     collection: 'session',
     autoRemove: 'interval',
-    autoRemoveInterval: 10
+    autoRemoveInterval: 120
   }),
   key: 'user_sid',
   secret: 'anything here',
   resave: false,
   saveUninitialized: false,
   cookie: {
-    expires: 600000
+    expires: 6000000
   }
 }));
 

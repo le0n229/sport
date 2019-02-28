@@ -20,3 +20,20 @@ a {
   border-left: 1px solid black;
   border-bottom: 1px solid black;
 }
+
+
+.prev-grid {
+  display:grid;
+  grid-template-columns: repeat(10, 10%);
+  border: 1px solid black;
+
+}
+
+.prev-header {
+  border: 2px solid black;
+}
+
+.prev-flex-block {
+  display: block;
+  margin: 10px;
+}
