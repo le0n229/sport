@@ -12,9 +12,9 @@
 
     <label for="gender">Пол: </label>
     {{!-- <form> --}}
-        {{!-- {{#if (gender='men')}} checked {{/if}} --}}
-        <span><input name="gender" for="gender" type="radio" value="men"   >муж    </input></span>
-        <span></span><input name="gender" for="gender" type="radio" value="woman">    жен</input></span>
+       
+        <span><input name="gender" for="gender" type="radio" value="men" {{#ifCond gender 'men'}} checked {{/ifCond}}   >муж    </input></span>
+        <span></span><input name="gender" for="gender" type="radio" value="woman" {{#ifCond gender 'woman'}} checked {{/ifCond}}>    жен</input></span>
     {{!-- </form> --}}
 <br>
     <label for="height">Ваш рост:</label><br>
