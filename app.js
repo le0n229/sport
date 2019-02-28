@@ -34,7 +34,8 @@ hbs.registerHelper('ifundef', function(v1, options) {
 // const app = express();
 
 const db = mongoose.connect(
-  'mongodb://localhost:27017/supersport',
+  'mongodb+srv://elbrus:Qwerty123@cluster0-dqtpq.mongodb.net/test?retryWrites=true',
+  // 'mongodb://localhost:27017/supersport',
   {
     useNewUrlParser: true
   });
