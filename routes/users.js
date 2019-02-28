@@ -51,7 +51,7 @@ router.post('/neworder', async function (req, res, next) {
   //   if (err) return console.log(err);
   //   console.log(result);
   // });
-  res.redirect('/users/profile');
+  res.redirect('/users');
 });
 
 router.get('/neworder', function (req, res, next) {
