@@ -1,0 +1,55 @@
+<h1>CRM</h1>
+<div class="grid">
+    <div>
+        <h3>Список клиентов</h3>
+
+        <table border="1" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Логин</th>
+                    <th>Телефон</th>
+                    <th>Команды</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each Client}}
+                <tr data-name={{this.userName}}>
+
+                    <td>{{this.userName}}</td>
+                    <td>{{this.phone}}</td>
+                    <td>
+                        {{!-- <a href="/api/index/{{this._id}}" >D</a> --}}
+
+                        <button id="subBut">Информация по клиенту</button>
+
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+
+        </table>
+
+
+    </div>
+    <div></div>
+</div>
+<h3>Статистика по заказам</h3>
+<table border="1" cellspacing="0">
+    <thead>
+        <tr>
+            <th>Логин</th>
+            <th>Тel</th>
+            <th>К</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each testView}}
+        <tr datd-name={{this.userName}}>
+
+            <td> {{this.userName}}</td>
+            <td>r</td>
+            <td>t</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
