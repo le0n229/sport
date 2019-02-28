@@ -11,7 +11,9 @@ const clientSchema = mongoose.Schema({
     phone: String,
     age: Number,
     height: Number,
-    weight: Number
+    weight: Number,
+    gender: String,
+    
 })
 
 module.exports = mongoose.model('Client', clientSchema);
