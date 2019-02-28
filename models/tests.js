@@ -5,6 +5,8 @@ const testSchema = mongoose.Schema({
     createdAt: Date,
     updatedAt: Date,
     status: String,
+    оrderNumber: Number,
+    deliveryDate: Date,    
     totalProtein: Number, 
     creatinine: Number,
     urea: Number,

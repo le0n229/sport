@@ -1,13 +1,14 @@
 const mongoose = require('mongoose');
 
 const clientSchema = mongoose.Schema({
+    role: String,
     userName: String,
     password: String,
     firstName: String,
     lastName: String,
     email: String,
     address: String,
-    phone: Number,
+    phone: String,
     age: Number,
     height: Number,
     weight: Number
