@@ -89,4 +89,26 @@ router.get('/prevorders', async function (req, res, next) {
 });
 
 
+router.post('/addadmin', async function (req, res, next) {
+  Users.updateOne({ userName: req.body.username }, {
+    role: 'admin'
+  }, function (err, result) {
+    if (err) return console.log(err);
+    console.log(result);
+  });
+  res.redirect('/users');
+});
+
+router.post('/addcourier', async function (req, res, next) {
+  Users.updateOne({ userName: req.body.username }, {
+    role: 'courier'
+  }, function (err, result) {
+    if (err) return console.log(err);
+    console.log(result);
+  });
+  res.redirect('/users');
+});
+
+
+
 module.exports = router;
