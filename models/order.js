@@ -5,10 +5,14 @@ const orderSchema = mongoose.Schema({
     createdAt: Date,
     updatedAt: Date,
     status: String,
-    оrderNumber: Number,
+    orderNumber: Number,
     deliveryDate: Date,
     deliveryTime: String,
-    address: String
+    address: String,
+    firstName: String,
+    lastName: String,
+    phone: String,
+    orderAmount: Number
 })
 
 module.exports = mongoose.model('Order', orderSchema);

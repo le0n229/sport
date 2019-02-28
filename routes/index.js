@@ -7,6 +7,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+// module.exports = router;
 router.post('/login', async (req, res) => {
   const userName = req.body.username;
   const password = req.body.password;
