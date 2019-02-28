@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const orderSchema = mongoose.Schema({  
+const orderSchema = mongoose.Schema({
     userName: String,
     createdAt: Date,
     updatedAt: Date,
