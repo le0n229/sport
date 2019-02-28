@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const AutoIncrement = require('mongoose-sequence')(mongoose);
 
-const orderSchema = mongoose.Schema({  
+const orderSchema = mongoose.Schema({
     userName: String,
     createdAt: Date,
     updatedAt: Date,

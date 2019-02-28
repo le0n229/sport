@@ -7,3 +7,23 @@ body {
 a {
   color: #00B7FF;
 }
+
+
+.prev-grid {
+  display:grid;
+  grid-template-columns: repeat(10, 10%);
+  border: 1px solid black;
+
+}
+
+.prev-header {
+  border: 2px solid black;
+}
+
+.prev-flex-block {
+  display: block;
+  margin: 10px;
+}
+
+
+
