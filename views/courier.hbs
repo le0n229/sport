@@ -1,2 +1,31 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<h1>страничка курьера</h1>
+<hr>
+<h2>Текущие заказы</h2><br>
+<hr>
+
+{{#each order}}
+<table class="table table-bordered table-primary" border="1">
+    <tr>
+        <th>номер заказа</th>
+        <th>адрес</th>
+        <th>дата доставки</th>
+        <th>время доставки</th>
+        <th>Имя</th>
+        <th>Фамилия</th>
+        <th>телефон</th>
+        <th>доставлен</th>
+        <th>отмена</th>
+    </tr>
+    <tr>
+        <td>{{this.orderNumber}}</td>
+        <td>{{this.deliveryAdress}}</td>
+        <td>{{this.deliveryDate}}</td>
+        <td>{{this.deliveryTime}}</td>
+        <td>{{this.firstName}}</td>
+        <td>{{this.lastName}}</td>
+        <td>{{this.phone}}</td>
+        <td><button name="delivered" id="delivered">доставлен</button></td>
+        <td><button name="cancel" id="cancel">отмена</button></td>
+    </tr>
+</table>
+{{/each}}

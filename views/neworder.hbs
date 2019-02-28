@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<h2>Вызов курьера:</h2><br>
+<form action="" method="POST">
+
+    <label for="serviceType">Наименование услуги:</label><br>
+    <select name="serviceType" id="serviceType">
+        <option value="getAnaliz">Вызвать курьера с прибором для сбора анализа</option>
+        <option value="putAnaliz">Вызвать курьера забрать анализ</option>
+        <option value="service3">Услуга 3</option>
+        <option value="service4">Услуга 4</option>
+        <option value="service5">Услуга 5</option>
+    </select><br><br>
+
+    <label for="deliveryAddress">Адрес доставки:</label><br>
+    <input name="deliveryAddress" id="deliveryAddress"></input><br><br>
+
+    <label for="deliveryDate">Дата доставки:</label><br>
+    <input name="deliveryDate" id="deliveryDate"></input><br><br>
+
+    <label for="deliveryTime">Время доставки:</label><br>
+    <select name="deliveryTime" id="deliveryTime">
+        <option value="timePeriod1">9:00-12:00</option>
+        <option value="timePeriod1">12:00-15:00</option>
+        <option value="timePeriod1">15:00-18:00</option>
+        <option value="timePeriod1">18:00-21:00</option>
+        <option value="timePeriod1">21:00-23:00</option>
+    </select><br><br>
+
+    <input type="submit" value="Сохранить"></input>
+</form>
