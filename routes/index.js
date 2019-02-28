@@ -4,8 +4,9 @@ const Users = require('../models/clients');
 const Order = require('../models/order');
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
-  res.render('index', req.session.user);
+
+router.get('/', function(req, res, next) {
+  res.render('index',{user:req.session.user});
 });
 
 // module.exports = router;
@@ -28,7 +29,8 @@ router.post('/login', async (req, res) => {
 
 
 router.get('/login', function (req, res, next) {
-  res.render('login', req.session.user);
+
+  res.render('login',{user:req.session.user});
 });
 
 
@@ -53,7 +55,7 @@ router.post('/signup', async (req, res, next) => {
 });
 
 router.get('/signup', function (req, res, next) {
-  res.render('signup');
+  res.render('signup',{user:req.session.user});
 });
 
 router.get('/logout', function (req, res, next) {
@@ -81,5 +83,6 @@ router.post('/courier/:id', async (req, res) => {
   // res.render('courier', { orderInfo })
   res.redirect('/courier');
 })
+
 
 module.exports = router;
