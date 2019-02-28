@@ -12,7 +12,8 @@ const orderSchema = mongoose.Schema({
     firstName: String,
     lastName: String,
     phone: String,
-    orderAmount: Number
+    orderAmount: Number,
+    orderTitle: String
 })
 
 module.exports = mongoose.model('Order', orderSchema);
