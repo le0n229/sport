@@ -5,7 +5,7 @@ const Order = require('../models/order');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', req.session.user);
+  res.render('index',{user:req.session.user});
 });
 
 // module.exports = router;
@@ -28,7 +28,7 @@ router.post('/login', async (req, res) => {
 
 
 router.get('/login', function (req, res, next) {
-  res.render('login',req.session.user);
+  res.render('login',{user:req.session.user});
 });
 
 
@@ -53,7 +53,7 @@ router.post('/signup', async (req, res,next) => {
 });
 
 router.get('/signup', function (req, res, next) {
-  res.render('signup');
+  res.render('signup',{user:req.session.user});
 });
 
 router.get('/logout', function (req, res, next) {
@@ -67,10 +67,12 @@ router.get('/courier', async (req, res) => {
   res.render('courier', {orderInfo})
 })
 
+
 router.post('/courier', async (req, res) => { 
   console.log('>>>>>>>>>>>>>>'+req.body.delivered)
   
   res.render('courier', {orderInfo})
 })
+
 
 module.exports = router;
