@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Users = require('../models/clients');
+const Order = require('../models/order');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -61,9 +62,17 @@ router.get('/logout', function (req, res, next) {
 });
 
 
+router.get('/courier', async (req, res) => {
+  const orderInfo = await Order.find();
+  res.render('courier', {orderInfo})
+})
 
-router.get('/courier', function (req, res, next) {
-  res.render('courier',{user:req.session.user});
-});
+
+router.post('/courier', async (req, res) => { 
+  console.log('>>>>>>>>>>>>>>'+req.body.delivered)
+  
+  res.render('courier', {orderInfo})
+})
+
 
 module.exports = router;
