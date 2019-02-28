@@ -47,15 +47,16 @@ let firstNames = ['firstName1', 'firstName2', 'firstName3', 'firstName4','firstN
             userName: 'qwery1',
             createdAt: faker.date.past(),
             updatedAt: faker.date.past(),
-            status: 'client',
+            status: 'Передан курьеру',
             orderNumber: faker.random.number(),
             deliveryDate: faker.date.past(),
-            deliveryTime: faker.date.past(),
+            deliveryTime: '12:00-15:00',
             address: faker.address.streetAddress(),
             firstName: firstNames[0],
             lastName: lastNames[0],
             phone: '8-905-567-98-75',
-            orderAmount: 11200
+            orderAmount: 11200,
+            orderTitle: 'Забрать кровь'
         })
 
         await order.save();

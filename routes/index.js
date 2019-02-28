@@ -60,7 +60,12 @@ router.get('/logout', function (req, res, next) {
   res.redirect('/');
 });
 
+router.get('/neworder', function (req, res, next) {
+  res.render('neworder');
+});
 
-
+router.get('/courier', function (req, res, next) {
+  res.render('courier');
+});
 
 module.exports = router;

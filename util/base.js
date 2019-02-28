@@ -4,31 +4,31 @@ const Test = require('../models/tests');
 
 // mongoose.connect('mongodb://localhost:27017/supersport');
 
-async function base (){
+// async function base (){
 
-    let newClient = new Client({
+//     let newClient = new Client({
         
-        userName: 'Dim',
-        password: '123',
-        firstName: 'D',
-        lastName: 'A',
-        email: 'd@s.s',
-        address: 'String',
-        phone: '555',
-        age: '28',
-        height: '175',
-        weight: '80'
-    })
-    await newClient.save();
-}
+//         userName: 'Dim',
+//         password: '123',
+//         firstName: 'D',
+//         lastName: 'A',
+//         email: 'd@s.s',
+//         address: 'String',
+//         phone: '555',
+//         age: '28',
+//         height: '175',
+//         weight: '80'
+//     })
+//     await newClient.save();
+// }
 
-base()
+// base()
 async function test (){
 
 const newTest = new Test({
     userName: 'Masha',
-    createdAt: '01/02/2019',
-    updatedAt: '02.02/2019',
+    createdAt: '01/03/2019',
+    updatedAt: '01.08/2019',
     status: 'String',
     totalProtein: '1', 
     creatinine: '2',

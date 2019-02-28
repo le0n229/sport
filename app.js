@@ -3,7 +3,7 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-
+const hbs = require('hbs');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const crmRouter = require('./routes/crm');
@@ -15,6 +15,14 @@ const session = require('express-session');
 const mongoose = require('mongoose');
 const MongoStore = require('connect-mongo')(session);
 
+
+
+hbs.registerHelper('ifCond', function(v1, v2, options) {
+  if(v1 === v2) {
+    return options.fn(this);
+  }
+  return options.inverse(this);
+});
 
 // const app = express();
 
