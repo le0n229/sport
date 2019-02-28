@@ -20,30 +20,34 @@
             <ul class="nav navbar-nav">
               <li><a href="/">Домой</a></li>
 
-              {{#ifundef userName}}
+              {{#ifundef user.userName}}
               <li><a href="/signup">Зарегистрироваться</a></li>
               {{/ifundef}}
 
-                 {{#ifundef userName}}
+                 {{#ifundef user.userName}}
               {{else}}
               <li><a href="/admins">Администрирование</a></li>
               {{/ifundef}}
 
-               {{#ifundef userName}}
+               {{#ifundef user.userName}}
               {{else}}
               <li><a href="/crm">CRM</a></li>
+              {{/ifundef}}
+                 {{#ifundef user.userName}}
+              {{else}}
+              <li><a href="/courier">Курьер</a></li>
               {{/ifundef}}
               {{!-- <li><a href="/dashboard">Dashboard</a></li> --}}
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
 
-              <li><a href="/users">{{userName}}</a></li>
-              {{#ifundef userName}}
+              <li><a href="/users">{{user.userName}}</a></li>
+              {{#ifundef user.userName}}
               {{else}}
               <li><a href="/logout">Выйти</a></li>
               {{/ifundef}}
-              {{#ifundef userName}}
+              {{#ifundef user.userName}}
               <li><a href="/login">Войти</a></li>
               {{/ifundef}}
 

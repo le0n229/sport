@@ -4,13 +4,13 @@ const Users = require('../models/clients');
 const Orders = require('../models/order');
 /* GET users listing. */
 router.get('/', function (req, res, next) {
-  res.render('client', req.session.user);
+  res.render('client', {user:req.session.user});
 });
 
 
 
 router.get('/profile', function (req, res, next) {
-  res.render('profile', req.session.user);
+  res.render('profile', {user:req.session.user});
 });
 
 router.post('/profile', async function (req, res, next) {
@@ -55,7 +55,13 @@ router.post('/neworder', async function (req, res, next) {
 });
 
 router.get('/neworder', function (req, res, next) {
-  res.render('neworder', req.session.user);
+  res.render('neworder', {user:req.session.user});
+});
+
+
+router.get('/prevorders', async function (req, res, next) {
+  const orderInfo = await Orders.find({userName:req.session.user.userName});
+  res.render('prevOrders', {user:req.session.user, order: orderInfo});
 });
 
 

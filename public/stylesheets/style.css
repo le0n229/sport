@@ -7,3 +7,12 @@ body {
 a {
   color: #00B7FF;
 }
+
+
+.prev-grid {
+  display:grid;
+  grid-template-columns: repeat(9, 10%);
+
+}
+
+

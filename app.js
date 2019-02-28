@@ -45,14 +45,14 @@ app.use(session({
     mongooseConnection: mongoose.connection,
     collection: 'session',
     autoRemove: 'interval',
-    autoRemoveInterval: 10
+    autoRemoveInterval: 120
   }),
   key: 'user_sid',
   secret: 'anything here',
   resave: false,
   saveUninitialized: false,
   cookie: {
-    expires: 600000
+    expires: 6000000
   }
 }));
 
