@@ -14,13 +14,13 @@ router.route('/')
     })
 
 
-router.post('/:name', async function (req, res) {
+router.get('/:name', async function (req, res) {
     console.log('POST==========ID', req.params.name)
     const Client = await Clients.find();
     const testView = await Tests.find({ userName: req.params.name });
-    console.log(testView)
+    console.log('post',testView)
 
-    res.json({Client, testView })
+    res.json(testView)
 })
 
 
