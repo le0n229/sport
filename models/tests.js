@@ -1,12 +1,7 @@
 const mongoose = require('mongoose');
 
-const testSchema = mongoose.Schema({
-    userName: String,
-    createdAt: Date,
-    updatedAt: Date,
-    status: String,
-    оrderNumber: Number,
-    deliveryDate: Date,    
+const testSchema = mongoose.Schema({    
+    userName: String,   
     totalProtein: Number, 
     creatinine: Number,
     urea: Number,
