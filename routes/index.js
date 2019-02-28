@@ -9,10 +9,10 @@ router.get('/', function(req, res, next) {
 
 // module.exports = router;
 router.post('/login', async (req, res) => {
-  const username = req.body.username;
+  const userName = req.body.username;
   const password = req.body.password;
 
-  const user = await Users.findOne({ username });
+  const user = await Users.findOne({ userName });
   if (!user) {
     res.redirect('/login');
   } else if (user.password !== password) {
@@ -35,7 +35,7 @@ router.get('/login', function (req, res, next) {
 router.post('/signup', async (req, res,next) => {
   try {
     const user = new Users({
-      username: req.body.username,
+      userName: req.body.username,
       email: req.body.email,
       password: req.body.password
     })
