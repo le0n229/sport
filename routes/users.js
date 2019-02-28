@@ -2,9 +2,13 @@ var express = require('express');
 var router = express.Router();
 const Users = require('../models/clients');
 /* GET users listing. */
-// router.get('/', function(req, res, next) {
-//   res.send('respond with a resource');
-// });
+router.get('/', function(req, res, next) {
+  res.render('client', req.session.user );
+});
+
+router.get('/neworder', function (req, res, next) {
+  res.render('neworder');
+});
 
 router.get('/profile', function (req, res, next) {
   res.render('profile', req.session.user);

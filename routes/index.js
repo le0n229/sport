@@ -19,7 +19,7 @@ router.post('/login', async (req, res) => {
     res.redirect('/login');
   } else {
     req.session.user = user;
-    res.redirect('/');
+    res.redirect('/users');
   }
 
 });
@@ -60,9 +60,7 @@ router.get('/logout', function (req, res, next) {
   res.redirect('/');
 });
 
-router.get('/neworder', function (req, res, next) {
-  res.render('neworder');
-});
+
 
 router.get('/courier', function (req, res, next) {
   res.render('courier');
