@@ -3,9 +3,10 @@
     <div>
         <h3>Список клиентов</h3>
 
-        <table border="1" cellspacing="0">
-            <thead>
+        <table border="1" cellspacing="0" class="table table-striped">
+            <thead >
                 <tr>
+
                     <th>Логин</th>
                     <th>Телефон</th>
                     <th>Команды</th>
@@ -18,10 +19,7 @@
                     <td>{{this.userName}}</td>
                     <td>{{this.phone}}</td>
                     <td>
-                        {{!-- <a href="/api/index/{{this._id}}" >D</a> --}}
-
                         <button id="subBut">Информация по клиенту</button>
-
                     </td>
                 </tr>
                 {{/each}}
@@ -34,12 +32,12 @@
     <div></div>
 </div>
 <h3>Статистика по заказам</h3>
-<table border="1" cellspacing="0">
+<table border="1" cellspacing="0" class="table table-striped">
     <thead>
         <tr>
-            <th>Логин</th>
-            <th>Тel</th>
-            <th>К</th>
+            <th scope="row">Логин</th>
+            <th scope="row">Тel</th>
+            <th scope="row">К</th>
         </tr>
     </thead>
     <tbody>
