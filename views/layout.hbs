@@ -18,18 +18,34 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-              <li><a href="/">Home</a></li>
+              <li><a href="/">Домой</a></li>
 
-              <li><a href="/signup">Sign Up</a></li>
+              {{#ifundef userName}}
+              <li><a href="/signup">Зарегистрироваться</a></li>
+              {{/ifundef}}
 
+                 {{#ifundef userName}}
+              {{else}}
+              <li><a href="/admins">Администрирование</a></li>
+              {{/ifundef}}
+
+               {{#ifundef userName}}
+              {{else}}
+              <li><a href="/crm">CRM</a></li>
+              {{/ifundef}}
               {{!-- <li><a href="/dashboard">Dashboard</a></li> --}}
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
 
-              <li><a href="/logout">{{userName}} Log Out</a></li>
-
-              <li><a href="/login">Log In</a></li>
+              <li><a href="/users">{{userName}}</a></li>
+              {{#ifundef userName}}
+              {{else}}
+              <li><a href="/logout">Выйти</a></li>
+              {{/ifundef}}
+              {{#ifundef userName}}
+              <li><a href="/login">Войти</a></li>
+              {{/ifundef}}
 
             </ul>
           </div><!-- /.navbar-collapse -->

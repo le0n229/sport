@@ -7,9 +7,7 @@ router.get('/', function(req, res, next) {
   res.render('client', req.session.user );
 });
 
-router.get('/neworder', function (req, res, next) {
-  res.render('neworder');
-});
+
 
 router.get('/profile', function (req, res, next) {
   res.render('profile', req.session.user);

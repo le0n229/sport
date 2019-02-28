@@ -4,7 +4,7 @@ const Users = require('../models/clients');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'SuperSport' });
+  res.render('index', req.session.user);
 });
 
 // module.exports = router;
@@ -27,7 +27,7 @@ router.post('/login', async (req, res) => {
 
 
 router.get('/login', function (req, res, next) {
-  res.render('login');
+  res.render('login',req.session.user);
 });
 
 
