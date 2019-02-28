@@ -54,5 +54,9 @@ router.post('/neworder', async function (req, res, next) {
   res.redirect('/users/profile');
 });
 
+router.get('/neworder', function (req, res, next) {
+  res.render('neworder', req.session.user);
+});
+
 
 module.exports = router;
