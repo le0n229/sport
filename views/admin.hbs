@@ -1,6 +1,7 @@
-<h1>Администрирование</h1>
+<h3 text-color="red" color="red"><b>Администрирование</b></h3>
 <table class="table table-bordered">
-    <tr>
+    
+    <tr class="thead-dark">
         <th>Номер заказа</th>
         <th>Тип заказа</th>
         <th>Дата и время заказа</th>
@@ -20,7 +21,7 @@
         <td>{{this.phone}}</td>
         <td>{{this.orderAmount}} RUB</td>
         <td>
-            <input class="deliveryDate" type="date" name="desired_time"
+            <input class="deliveryDate" class="form-control" type="date" name="desired_time"
                 value="{{#formatDate this.deliveryDate}}{{/formatDate}}">
         </td>
         <td>
