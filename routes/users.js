@@ -15,7 +15,7 @@ router.get('/profile', function (req, res, next) {
 
 
 router.post('/profile', async function (req, res, next) {
-  Users.updateOne({ _id: req.session.user._id }, {
+ await Users.updateOne({ _id: req.session.user._id }, {
     firstName: req.body.firstName,
     lastName: req.body.lastName,
     address: req.body.address,

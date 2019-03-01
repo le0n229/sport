@@ -5,8 +5,8 @@ const Order = require('../models/order');
 
 /* GET home page. */
 
-router.get('/', function(req, res, next) {
-  res.render('index',{user:req.session.user});
+router.get('/', function (req, res, next) {
+  res.render('index', { user: req.session.user });
 });
 
 // module.exports = router;
@@ -21,16 +21,21 @@ router.post('/login', async (req, res) => {
     res.redirect('/login');
   } else {
     req.session.user = user;
-    res.redirect('/users');
+    if (req.session.user.role === 'courier') {
+      res.redirect('/courier');
+    } else if (req.session.user.role === 'admin') {
+      res.redirect('/admins');
+    } else {
+      res.redirect('/users');
+    }
   }
-
 });
 
 
 
 router.get('/login', function (req, res, next) {
 
-  res.render('login',{user:req.session.user});
+  res.render('login', { user: req.session.user });
 });
 
 
@@ -55,7 +60,7 @@ router.post('/signup', async (req, res, next) => {
 });
 
 router.get('/signup', function (req, res, next) {
-  res.render('signup',{user:req.session.user});
+  res.render('signup', { user: req.session.user });
 });
 
 router.get('/logout', function (req, res, next) {
@@ -66,8 +71,8 @@ router.get('/logout', function (req, res, next) {
 
 router.get('/courier', async (req, res) => {
   // const orderInfo = await Order.find();
-  const orderInfo = await Order.find({'status': { $ne: 'ОТМЕНЁН'}});
-  res.render('courier', { orderInfo }) 
+  const orderInfo = await Order.find({ 'status': { $ne: 'ОТМЕНЁН' } });
+  res.render('courier', { orderInfo: orderInfo, user: req.session.user })
 })
 
 router.post('/courier/:id', async (req, res) => {
@@ -76,10 +81,10 @@ router.post('/courier/:id', async (req, res) => {
   //   Order.status = req.body.submit_param;
   //   Order.save(function (err) { });
   // });
-  const order = await Order.findOne({ _id: req.params.id },);
+  const order = await Order.findOne({ _id: req.params.id });
   order.status = req.body.submit_param;
   await order.save(function (err) { });
-  
+
   // res.render('courier', { orderInfo })
   res.redirect('/courier');
 })
