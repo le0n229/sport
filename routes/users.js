@@ -113,12 +113,11 @@ router.post('/addcourier', async function (req, res, next) {
 
 router.get('/analizes', async (req, res) => {
   let userName = req.session.user.userName;
+  if (!userName) {
+    res.redirect('/')
+  }
   let testData = await Test.find({userName})
-  console.log(testData)
-
   res.render('analize', {testData})
 })
-
-
 
 module.exports = router;
