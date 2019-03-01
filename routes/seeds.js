@@ -12,8 +12,18 @@ let firstNames = ['Вадим', 'Михаил', 'Рауф', 'Владимир', 
 
 
 async function seed() {
+    let role;
     for (let i = 0; i < names.length; i++) {
+        if (i === 1) {
+            role = 'admin';
+        } else if (i === 2) {
+            role = 'courier';
+        } else {
+            role = '';
+        }
+        
         const client = await new Client({
+            role: role,
             userName: names[i],
             password: '123',
             firstName: firstNames[i],
