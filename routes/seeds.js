@@ -1,26 +1,21 @@
 const mongoose = require('mongoose');
+const express = require('express');
+const router = express.Router();
 const Client = require('../models/clients');
 const Test = require('../models/tests');
 const Order = require('../models/order');
-
 const faker = require('faker');
 
-mongoose.connect(
-    'mongodb://localhost:27017/supersport',
-    {
-        useNewUrlParser: true
-    });
-
-let names = ['qwery1', 'qwery2', 'qwery3', 'qwery4','qwery5','qwery6','qwery7','qwery8','qwery9', 'qwery10'];
-let lastNames = ['lastName1', 'lastName2', 'lastName3', 'lastName4','lastName5','lastName6','lastName7','lastName8','lastName9', 'lastName10'];
-let firstNames = ['firstName1', 'firstName2', 'firstName3', 'firstName4','firstName5','firstName6','firstName7','firstName8','firstName9', 'firstName10'];
+let names = ['vadim', 'qwery2', 'qwery3', 'qwery4', 'qwery5', 'qwery6', 'qwery7', 'qwery8', 'qwery9', 'qwery10'];
+let lastNames = ['Петров', 'Иванов', 'Левин', 'Мышкин', 'Сидоров', 'Ленина', 'Нечаев', 'Логинов', 'Веселов', 'Березовый'];
+let firstNames = ['Вадим', 'Пётр', 'Иван', 'Михаил', 'Рауф', 'Елена', 'Иосиф', 'Дмитрий', 'Александр', 'Алексей'];
 
 
-(async function seed () {
+async function seed() {
     for (let i = 0; i < names.length; i++) {
         const client = await new Client({
             userName: names[i],
-            password: faker.internet.password(),
+            password: '123',
             firstName: firstNames[i],
             lastName: lastNames[i],
             email: faker.internet.email(),
@@ -33,16 +28,18 @@ let firstNames = ['firstName1', 'firstName2', 'firstName3', 'firstName4','firstN
 
         await client.save();
 
-        // const test = await new Test({
-        //     totalProtein: faker.random.number(),
-        //     creatinine: faker.random.number(),
-        //     urea: faker.random.number(),
-        //     totalCholesterol: faker.random.number(),
-        //     totalBilirubin: faker.random.number()
-        // })
+        const test = await new Test({
+            userName: names[i],
+            testDate: new Date(),
+            totalProtein: faker.random.number(),
+            creatinine: faker.random.number(),
+            urea: faker.random.number(),
+            totalCholesterol: faker.random.number(),
+            totalBilirubin: faker.random.number()
+        })
 
-        // await test.save();
-        
+        await test.save();
+
         const order = await new Order({
             userName: 'qwery1',
             createdAt: faker.date.past(),
@@ -60,7 +57,16 @@ let firstNames = ['firstName1', 'firstName2', 'firstName3', 'firstName4','firstN
 
         await order.save();
     }
-    mongoose.connection.close();
-})();
+    console.log('done!')
+};
 
+router.get('/', (req, res) => {
+    res.render('superseeds')
+});
 
+router.post('/', async (req, res) => {
+    await seed();
+    res.redirect('/superseeds');
+});
+
+module.exports = router;
