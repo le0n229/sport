@@ -28,8 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
             `
             document.getElementsByTagName('table')[1].appendChild(newRow);
             //console.log('RRRRRRRRRRRR',respBody)
-
-
         })
     }
 })

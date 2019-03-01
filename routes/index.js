@@ -65,8 +65,8 @@ router.get('/logout', function (req, res, next) {
 
 
 router.get('/courier', async (req, res) => {
-  // const orderInfo = await Order.find();
-  const orderInfo = await Order.find({'status': { $ne: 'ОТМЕНЁН'}});
+  const orderInfo = await Order.find();
+  // const orderInfo = await Order.find({'status': { $ne: 'ОТМЕНЁН'}});
   res.render('courier', { orderInfo }) 
 })
 

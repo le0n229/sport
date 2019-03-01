@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const articles = document.querySelectorAll('article');
-
+    console.log('eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee')
+    const articles = document.querySelectorAll('.orderRow');
     articles.forEach((item) => {
         const btn = item.querySelector('.fa');
         const point = item.querySelector('.point');
@@ -8,23 +8,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
         btn.addEventListener('click', async (e) => {
             e.preventDefault();
-            const response = await fetch(`/posts/${item.id}/vote`, {
+            const response = await fetch(`/courier/${item._id}`, {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'
-                }
+                },body
             });
             const text = await response.text();
-            point.innerText = text;
-            btn.style.color = 'red';
+            point.innerText = text;    
         });
 
         btnDel.addEventListener('click', async (e) => {
             e.preventDefault();
 
-            await fetch(`/${item.id}`, {
-                method: 'delete'
+            await fetch(`/courier/${item.id}`, {
+                method: 'POST'
             });
 
             if (btnDel.dataset.id === item.id) {
