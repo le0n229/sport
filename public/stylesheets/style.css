@@ -98,3 +98,12 @@ body {
   padding: 50px;
   color: white;
 }
+
+.column1 {
+  width: 70%;
+  margin: 30px auto;
+}
+
+.card{
+  background-color: rgb(4, 45, 68)
+}
