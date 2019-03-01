@@ -1,30 +1,32 @@
-<div class="prev-grid prev-header">
+<h1>Архив заказов</h1>
+<table border="1" cellspacing="0" class="table table-striped table-dark">
+    <tr class="thead-dark">
+        <td>Номер заказа</td>
+        <td>Тип заказа</td>
+        <td>Дата и время заказа</td>
+        <td>Контактное лицо</td>
+        <td>Телефон</td>
+        <td>Желаемая дата доставки</td>
+        <td>Желаемое время доставки</td>
+        <td>Адрес доставки</td>
+        <td>Телефон</td>
+        <td>Статус</td>
+    </tr>
 
-    <div class="prev-flex-block">Номер заказа</div>
-    <div class="prev-flex-block">Тип заказа</div>
-    <div class="prev-flex-block">Дата и время заказа</div>
-    <div class="prev-flex-block">Контактное лицо</div>
-    <div class="prev-flex-block">Телефон</div>
-    <div class="prev-flex-block">Желаемая дата доставки</div>
-    <div class="prev-flex-block">Желаемое время доставки</div>
-    <div class="prev-flex-block">Адрес доставки</div>
-    <div class="prev-flex-block">Телефон</div>
-    <div class="prev-flex-block">Статус</div>
-</div>
+    {{#each order}}
+    <tr>
 
-{{#each order}}
-<div class="prev-grid">
+        <td>{{orderNumber}}</td>
+        <td>{{orderTitle}}</td>
+        <td>{{createdAt}}</td>
+        <td>{{lastName}} {{firstName}}</td>
+        <td>{{phone}}</td>
+        <td>{{deliveryDate}}</td>
+        <td>{{deliveryTime}}</td>
+        <td>{{address}}</td>
+        <td>{{phone}}</td>
+        <td>{{status}}</td>
 
-    <div class="prev-flex-block">{{orderNumber}}</div>
-    <div class="prev-flex-block">{{orderTitle}}</div>
-    <div class="prev-flex-block">{{createdAt}}</div>
-    <div class="prev-flex-block">{{lastName}} {{firstName}}</div>
-    <div class="prev-flex-block">{{phone}}</div>
-    <div class="prev-flex-block">{{deliveryDate}}</div>
-    <div class="prev-flex-block">{{deliveryTime}}</div>
-    <div class="prev-flex-block">{{address}}</div>
-    <div class="prev-flex-block">{{phone}}</div>
-    <div class="prev-flex-block">{{status}}</div>
-
-</div>
-{{/each}}
+    </tr>
+    {{/each}}
+</table>
