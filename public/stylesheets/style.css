@@ -1,5 +1,5 @@
 body {
-  padding: 50px;
+  padding: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   
 }
@@ -21,12 +21,10 @@ a {
   border-bottom: 1px solid black;
 }
 
-
 .prev-grid {
   display:grid;
   grid-template-columns: repeat(10, 10%);
   border: 1px solid black;
-
 }
 
 .prev-header {
@@ -37,3 +35,4 @@ a {
   display: block;
   margin: 10px;
 }
+
