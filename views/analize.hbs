@@ -1,5 +1,6 @@
 <h1>Результаты анализов:</h1>
 
+{{#each testData}}
 <table class="table table-bordered">
     <tr>
         <th>Дата анализа</th>
@@ -10,12 +11,13 @@
         <th>Билирубин</th>
     </tr>
         <tr class="order">
-            <td class="orderNumber">{{this.orderNumber}}</td>
-            <td>{{this.orderTitle}}</td>
-            <td>{{this.createdAt}}</td>
-            <td>{{this.lastName}} {{this.firstName}}</td>
-            <td>{{this.phone}}</td>
-            <td>{{this.orderAmount}}</td>
+            <td>{{#formatDate this.testDate}}{{/formatDate}}</td>
+            <td>{{this.totalProtein}}</td>
+            <td>{{this.creatinine}}</td>
+            <td>{{this.urea}} {{this.firstName}}</td>
+            <td>{{this.totalCholesterol}}</td>
+            <td>{{this.totalBilirubin}}</td>
         </tr>
 
 </table>
+{{/each}}

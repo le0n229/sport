@@ -6,9 +6,9 @@ const Test = require('../models/tests');
 const Order = require('../models/order');
 const faker = require('faker');
 
-let names = ['vadim', 'qwery2', 'qwery3', 'qwery4', 'qwery5', 'qwery6', 'qwery7', 'qwery8', 'qwery9', 'qwery10'];
-let lastNames = ['Петров', 'Иванов', 'Левин', 'Мышкин', 'Сидоров', 'Ленина', 'Нечаев', 'Логинов', 'Веселов', 'Березовый'];
-let firstNames = ['Вадим', 'Пётр', 'Иван', 'Михаил', 'Рауф', 'Елена', 'Иосиф', 'Дмитрий', 'Александр', 'Алексей'];
+let names = ['vadim', 'mikhail', 'rauf', 'vladimir', 'alex', 'vadim', 'mikhail', 'rauf', 'vladimir', 'alex'];
+let lastNames = ['Петров', 'Иванов', 'Левин', 'Мышкин', 'Сидоров', 'Петров', 'Иванов', 'Левин', 'Мышкин', 'Сидоров'];
+let firstNames = ['Вадим', 'Михаил', 'Рауф', 'Владимир', 'Александр', 'Вадим', 'Михаил', 'Рауф', 'Владимир', 'Александр'];
 
 
 async function seed() {
