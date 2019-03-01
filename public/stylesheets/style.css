@@ -42,7 +42,7 @@ a {
 }
 
 .column {
-  border: 1px solid rgb(27, 27, 27);
+  /* border: 1px solid rgb(27, 27, 27); */
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), ;
   color: azure;
   padding: 15px;
@@ -52,11 +52,15 @@ a {
 }
 
 #imgHome {
-  width: 50vw;
+  width: 45vw;
   height: auto;
 }
 
 .prev-flex-block {
   display: block;
   margin: 10px;
+}
+
+.indexPicture {
+  float: left;
 }
