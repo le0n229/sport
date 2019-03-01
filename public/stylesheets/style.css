@@ -110,6 +110,21 @@ body {
   color: black;
 }
 
-.form-profile{
+.form-profile, 
+.form-new-order{
   width: 300px;
+}
+
+.control-new-order{
+  margin: 0;
+}
+
+.service-type,
+.delivery-time {
+  width: 270px;
+  height: 39px;
+}
+
+.delivery-time{
+  margin-bottom: 20px;
 }
