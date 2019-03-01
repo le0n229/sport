@@ -39,8 +39,13 @@ a {
 
 .prev-grid {
   display: grid;
-  grid-template-columns: repeat(10, 10%);
+  /* grid-template-columns: repeat(10, 10%); */
   border: 1px solid black;
+}
+
+.prev-flex-block {
+  min-width:100px;
+
 }
 
 .half {
