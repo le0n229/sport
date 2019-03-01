@@ -1,15 +1,25 @@
-<div class="container">
-    <div class="row">
-        <div class="col text-center">
-            <h1>Добро пожаловать, {{user.firstName}}!</h1><br>
-            <h3 class="nav-pills"><a class="nav-pills" href="users/neworder">Вызвать курьера</a></h3><br>
-            <h3><a href="users/profile">Профиль</a></h3><br>
-            <h3><a href="">Подписки</a></h3><br>
-            <h3><a href="users/prevorders">Архив заказов</a></h3><br>
-            <h3><a href="users/analizes">Архив анализов</a></h3>
-        </div>
+<div class="column">
+    <h1>Добро пожаловать, {{user.firstName}}!</h1><br>
+    <div class="btn-group-vertical btn-group-lg" role="group" aria-label="Vertical button group">
+        <a class="btn btn-primary" href="users/neworder" role="button">Вызвать курьера</a>
+        <a class="btn btn-primary" href="users/profile" role="button">Профиль</a>
+        <a class="btn btn-primary" href="/" role="button">Подписки</a>
+        <a class="btn btn-primary" href="users/prevorders" role="button">Архив заказов</a>
+        <a class="btn btn-primary" href="users/analizes" role="button">Архив анализов</a>    
     </div>
 </div>
+<div class="column">
+    {{!-- <img id="imgHome" class="float-md-left" src="/imj/blood test kit.png"> --}}
+    <h1>Узнайте, что ваша кровь говорит о вас ...</h1>
+    <div>
+        <h3>Получить еще более полное понимание вашего состояния. Получите онлайн отчеты о здоровье - и многое другое.
+        </h3>
+        <h3>2 999 руб.</h3>
+        <br>
+        <button id="indexButton" type="button" class="btn btn-success">Купить</button>
+    </div>
+</div>
+
 {{#ifCond user.userName 'admin'}}
 <form action="users/addadmin" method="post">
     <div>
