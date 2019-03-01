@@ -21,9 +21,14 @@ router.post('/login', async (req, res) => {
     res.redirect('/login');
   } else {
     req.session.user = user;
-    res.redirect('/users');
+    if (req.session.user.role === 'courier') {
+      res.redirect('/courier');
+    } else if (req.session.user.role === 'admin') {
+      res.redirect('/admins');
+    } else {
+      res.redirect('/users');
+    }
   }
-
 });
 
 
@@ -78,8 +83,9 @@ router.post('/courier', async (req, res) => {
     { orderNumber },
     { status }
   );
+  
   res.send(200)
-  // res.render('courier', { orderInfo })
+  res.render('courier', { orderInfo: orderInfo, user: req.session.user })
 })
 
 // router.post('/courier/:id', async (req, res) => {
