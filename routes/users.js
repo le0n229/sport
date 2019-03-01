@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 const Users = require('../models/clients');
 const Orders = require('../models/order');
+const Test = require('../models/tests');
+
 /* GET users listing. */
 router.get('/', function (req, res, next) {
   res.render('client', { user: req.session.user });
@@ -108,6 +110,14 @@ router.post('/addcourier', async function (req, res, next) {
   });
   res.redirect('/users');
 });
+
+router.get('/analizes', async (req, res) => {
+  let userName = req.session.user.userName;
+  let testData = await Test.find({userName})
+  console.log(testData)
+
+  res.render('analize', {testData})
+})
 
 
 

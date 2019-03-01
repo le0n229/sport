@@ -7,6 +7,7 @@ const hbs = require('hbs');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const crmRouter = require('./routes/crm');
+const seedsRouter = require('./routes/seeds');
 
 const adminsRouter = require('./routes/admin');
 
@@ -24,16 +25,19 @@ hbs.registerHelper('ifCond', function(v1, v2, options) {
 
 
 hbs.registerHelper('formatDate', function(date) {
-    let day = date.getDate();
-    let month = date.getMonth() + 1;
-    let year = date.getFullYear();
-    if((month) < 10) {
-      month = `0${month}`;
+    try {let day = date.getDate();
+      let month = date.getMonth() + 1;
+      let year = date.getFullYear();
+      if((month) < 10) {
+        month = `0${month}`;
+      }
+      if(day < 10) {
+        day = `0${day}`;
+      }
+      return `${year}-${month}-${day}`
+    } catch(err) {
     }
-    if(day < 10) {
-      day = `0${day}`;
-    }
-    return `${year}-${month}-${day}`   
+       
 });
 
 hbs.registerHelper('ifundef', function(v1, options) {
@@ -85,6 +89,7 @@ app.use('/users', usersRouter);
 app.use('/crm', crmRouter)
 
 app.use('/admins', adminsRouter);
+app.use('/superseeds', seedsRouter);
 
 
 // catch 404 and forward to error handler

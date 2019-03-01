@@ -17,4 +17,5 @@ const orderSchema = mongoose.Schema({
 })
 
 orderSchema.plugin(AutoIncrement, {inc_field: 'orderNumber'});
+
 module.exports = mongoose.model('Order', orderSchema);
