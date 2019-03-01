@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    'deliveryDate': deliveryDate.value,'orderNumber': orderNumber.innerText,
+                    'deliveryDate': deliveryDate.value, 'orderNumber': orderNumber.innerText,
                     'deliveryTime': deliveryTime.value,
                     'status': status.value
                 })
@@ -51,5 +51,5 @@ document.addEventListener('DOMContentLoaded', () => {
                 })
             });
         })
-    });    
+    });
 })
