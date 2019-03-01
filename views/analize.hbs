@@ -1,0 +1,23 @@
+<h1>Результаты анализов:</h1>
+
+{{#each testData}}
+<table class="table table-bordered">
+    <tr>
+        <th>Дата анализа</th>
+        <th>Протеин</th>
+        <th>Креатинин</th>
+        <th>Урина</th>
+        <th>Холестерол</th>
+        <th>Билирубин</th>
+    </tr>
+        <tr class="order">
+            <td>{{#formatDate this.testDate}}{{/formatDate}}</td>
+            <td>{{this.totalProtein}}</td>
+            <td>{{this.creatinine}}</td>
+            <td>{{this.urea}} {{this.firstName}}</td>
+            <td>{{this.totalCholesterol}}</td>
+            <td>{{this.totalBilirubin}}</td>
+        </tr>
+
+</table>
+{{/each}}
