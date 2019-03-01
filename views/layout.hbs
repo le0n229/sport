@@ -26,7 +26,9 @@
       <ul class="navbar-nav mr-auto">
         {{#ifundef user.userName}}
         <li class="nav-item active">
-          <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModalCenter">Зарегистрироваться</a>
+
+          <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModalCenter">Регистрация</a>
+
         </li>
         {{/ifundef}}
         {{#ifCond user.role 'admin'}}
