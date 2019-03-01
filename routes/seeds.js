@@ -21,9 +21,9 @@ async function seed() {
             email: faker.internet.email(),
             address: faker.address.streetAddress(),
             phone: faker.phone.phoneNumber(),
-            age: faker.random.number(),
-            height: faker.random.number(),
-            weight: faker.random.number()
+            age: Math.floor(Math.random() * 100),
+            height: Math.floor(Math.random() * 200),
+            weight: Math.floor(Math.random() * 100)
         })
 
         await client.save();
@@ -48,8 +48,8 @@ async function seed() {
             deliveryDate: new Date(),
             deliveryTime: '12:00-15:00',
             address: faker.address.streetAddress(),
-            firstName: firstNames[0],
-            lastName: lastNames[0],
+            firstName: firstNames[i],
+            lastName: lastNames[i],
             phone: '8-905-567-98-75',
             orderAmount: 11200,
             orderTitle: 'Забрать кровь'
