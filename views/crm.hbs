@@ -1,35 +1,37 @@
 <h1>CRM</h1>
-<div <img id="imgCRM" src="/imj"></div> 
-    <div>
-        <h3>Список клиентов</h3>
+<script src="/js/crm.js"></script>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<div <img id="imgCRM" src="/imj"></div>
+<div>
+    <h3>Список клиентов</h3>
 
-        <table border="1" cellspacing="0" class="table table-striped">
-            <thead>
-                <tr>
+    <table border="1" cellspacing="0" class="table table-striped">
+        <thead>
+            <tr>
 
-                    <th>Логин</th>
-                    <th>Телефон</th>
-                    <th>Команды</th>
-                </tr>
-            </thead>
-            <tbody>
-                {{#each Client}}
-                <tr data-name={{this.userName}}>
+                <th>Логин</th>
+                <th>Телефон</th>
+                <th>Команды</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each Client}}
+            <tr data-name={{this.userName}}>
 
-                    <td>{{this.userName}}</td>
-                    <td>{{this.phone}}</td>
-                    <td>
-                        <button id="subBut">Информация по клиенту</button>
-                    </td>
-                </tr>
-                {{/each}}
-            </tbody>
+                <td>{{this.userName}}</td>
+                <td>{{this.phone}}</td>
+                <td>
+                    <button id="subBut">Информация по клиенту</button>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
 
-        </table>
+    </table>
 
 
-    </div>
-    <div></div>
+</div>
+<div></div>
 </div>
 <h3>Статистика по заказам</h3>
 <table border="1" cellspacing="0" class="table table-striped">
@@ -47,4 +49,42 @@
 </table>
 
 
+<h1>Заголовок</h1>
+<p>Test</p>
+<p>Test</p>
+<p>Test</p>
+<p>Test</p>
+<p>Test</p>
+<p>Test</p>
+<p>Test</p>
+<style>
+    .chartHTML div {
+        font: 10px sans-serif;
+        background-color: blue;
+        text-align: center;
+        padding: 3px;
+        margin: 1px;
+        color: white;
+    }
+</style>
 
+<script>
+    d3.selectAll("h1").style("color", "green")
+
+    const data = [10, 20, 14, 34, 56, 78, 43, 12, 45]
+
+    const x = d3.scale.linear()
+        .domain([0, d3.max(data)])
+        .range([0, 350])
+
+    d3.select('.chartHTML')
+        .selectAll('div')
+        .data(data)
+        .enter().append('div')
+        .style('width', function (d) {
+            return x(d) + 'px'
+        })
+        .text(function (d) {
+            return d
+        })
+</script>
