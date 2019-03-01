@@ -90,6 +90,7 @@ a {
 }
 
 
+
   body {
     background:
       linear-gradient(rgba(0, 0, 0, 0.6),
@@ -100,4 +101,4 @@ a {
     align-content: center;
     padding: 50px;
     color: white;
-  }
+}
