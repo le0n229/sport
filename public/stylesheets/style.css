@@ -1,24 +1,15 @@
-body {
-  background:
-      linear-gradient(rgba(0, 0, 0, 0.6),
-      rgba(0, 0, 0, 0.7)),
-      url(/imj/dna-3539309_1920.jpg);
 
-  background-size: 100% auto;
-  align-content: center;
-  padding: 50px;
-}
-footer{
-background-color: rgb(9, 34, 49);
-  background: 
-  linear-gradient(rgba(14, 13, 13, 0.6),
-  rgba(26, 25, 25, 0.7)),
-  
-}
-
-a {
-  color: #00B7FF;
-}
+    footer{
+      background-color: rgb(9, 34, 49);
+      background: 
+      linear-gradient(rgba(14, 13, 13, 0.6),
+      rgba(26, 25, 25, 0.7)),
+      
+    }
+    
+    a {
+      color: #00B7FF;
+    }
 
 .text-uppercase {
   color: rgb(111, 118, 124);
@@ -26,11 +17,8 @@ a {
 .text-center{
   color: rgb(148, 157, 165);
 }
-.container-fluid{
-  border-radius: 5px;
-  border: 1px;
-  border-color: white;
-}
+
+
 
 /*  ssssssssssssssssssssssssss*/
 .row::before,
