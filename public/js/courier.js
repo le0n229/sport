@@ -1,34 +1,41 @@
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee')
-    const articles = document.querySelectorAll('.orderRow');
-    articles.forEach((item) => {
-        const btn = item.querySelector('.fa');
-        const point = item.querySelector('.point');
-        const btnDel = item.querySelector('.delete');
+// document.addEventListener('DOMContentLoaded', () => {
+//     const orders = document.querySelectorAll('.order');
+//     orders.forEach((item) => {
+//         const orderNumber = order.querySelector('.orderNumber');
+//         const deliveryButton = item.querySelector('.delivery');
+//         const deleteButton = item.querySelector('.delete');
+//         const deliveryDate = order.querySelector('.deliveryDate');
+//         const deliveryTime = order.querySelector('.deliveryTime');
+//         const status = order.querySelector('.status');
 
-        btn.addEventListener('click', async (e) => {
-            e.preventDefault();
-            const response = await fetch(`/courier/${item._id}`, {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },body
-            });
-            const text = await response.text();
-            point.innerText = text;    
-        });
+//         deliveryTime.addEventListener('change', async () => {
+//             await fetch('/admins', {
+//                 method: 'POST',
+//                 headers: {
+//                     'Accept': 'application/json',
+//                     'Content-Type': 'application/json'
+//                 },
+//                 body: JSON.stringify({
+//                     'deliveryDate': deliveryDate.value, 'orderNumber': orderNumber.innerText,
+//                     'deliveryTime': deliveryTime.value,
+//                     'status': status.value
+//                 })
+//             });
+//         })
 
-        btnDel.addEventListener('click', async (e) => {
-            e.preventDefault();
-
-            await fetch(`/courier/${item.id}`, {
-                method: 'POST'
-            });
-
-            if (btnDel.dataset.id === item.id) {
-                item.remove();
-            }
-        })
-    })
-})
+//         status.addEventListener('change', async (e) => {
+//             await fetch('/admins', {
+//                 method: 'POST',
+//                 headers: {
+//                     'Accept': 'application/json',
+//                     'Content-Type': 'application/json'
+//                 },
+//                 body: JSON.stringify({
+//                     'deliveryDate': deliveryDate.value, 'orderNumber': orderNumber.innerText,
+//                     'deliveryTime': deliveryTime.value,
+//                     'status': status.value
+//                 })
+//             });
+//         })
+//     });
+// })

@@ -1,4 +1,4 @@
-<script src="/js/courier.js"></script>
+{{!-- <script src="/js/courier.js"></script> --}}
 <h1>Cтраничка Курьера:   Текущие заказы</h1>
 <table border="1" cellspacing="0" class="table table-striped">
     <tr>
@@ -14,7 +14,7 @@
         <th>отмена</th>
     </tr>
     {{#each orderInfo}}
-    <tr class="orderRow" id="{{this._id}}">
+    <tr class="order" id="{{this._id}}">
         <td>{{this.orderNumber}}</td>
         <td>{{this.address}}</td>
         <td>{{this.deliveryDate}}</td>

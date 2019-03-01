@@ -1,18 +1,35 @@
+<div class="prev-grid prev-header">
+
+    <div class="prev-flex-block">Номер заказа</div>
+    <div class="prev-flex-block">Тип заказа</div>
+    <div class="prev-flex-block">Дата и время заказа</div>
+    <div class="prev-flex-block">Контактное лицо</div>
+    <div class="prev-flex-block">Телефон</div>
+    <div class="prev-flex-block">Желаемая дата доставки</div>
+    <div class="prev-flex-block">Желаемое время доставки</div>
+    <div class="prev-flex-block">Адрес доставки</div>
+    <div class="prev-flex-block">Телефон</div>
+    <div class="prev-flex-block">Статус</div>
 
 
+
+
+</div>
 
 {{#each order}}
 <div class="prev-grid">
 
-    <div>{{orderNumber}}</div>
-    <div>{{orderTitle}}</div>
-    <div>{{createdAt}}</div>
-    <div>{{lastName}} {{firstName}}</div>
-    <div>{{order.phone}}</div>
-    <div>{{deliveryDate}}</div>
-    <div>{{deliveryTime}}</div>
-    <div></div>
-    <div></div>
+    <div class="prev-flex-block">{{orderNumber}}</div>
+    <div class="prev-flex-block">{{orderTitle}}</div>
+    <div class="prev-flex-block">{{createdAt}}</div>
+    <div class="prev-flex-block">{{lastName}} {{firstName}}</div>
+    <div class="prev-flex-block">{{phone}}</div>
+    <div class="prev-flex-block">{{deliveryDate}}</div>
+    <div class="prev-flex-block">{{deliveryTime}}</div>
+    <div class="prev-flex-block">{{address}}</div>
+    <div class="prev-flex-block">{{phone}}</div>
+    <div class="prev-flex-block">{{status}}</div>
+
 
 
 </div>

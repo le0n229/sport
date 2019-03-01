@@ -1,6 +1,6 @@
 <h1>Администрирование</h1>
 
-<table width="100%" border="1" cellpadding="4">
+<table class="table table-bordered">
     <tr>
         <th>Номер заказа</th>
         <th>Тип заказа</th>
@@ -14,37 +14,36 @@
     </tr>
 
     {{#each orderInfo}}
-    <tr>
-        <td>{{this.orderNumber}}</td>
-        <td>{{this.orderTitle}}</td>
-        <td>{{this.createdAt}}</td>
-        <td>{{this.lastName}} {{this.firstName}}</td>
-        <td>{{this.phone}}</td>
-        <td>{{this.orderAmount}} RUB</td>
-        <td>
-            <input class="devileryDate" type="date" name="desired_time" value="2018-05-05">
-        </td>
-        <td>
-            <select name="" id="">
-                <option value="" selected hidden>{{this.deliveryTime}}</option>
-                <option value="timePeriod1">9:00-12:00</option>
-                <option value="timePeriod1">12:00-15:00</option>
-                <option value="timePeriod1">15:00-18:00</option>
-                <option value="timePeriod1">18:00-21:00</option>
-                <option value="timePeriod6">21:00-23:00</option>
-            </select></td>
-        <td>
-            <form action="/admins" method="POST">
-                <select name="" id="">
-                    <option value="" selected hidden>{{this.status}}</option>
-                    <option value="open">Открыт</option>
-                    <option value="done">Завершен</option>
-                    <option value="to_courier">Передан курьеру</option>
-                    <option value="delivered">Вручен покупателю</option>
-                    <option value="cancelled">Аннулирован</option>
+
+        <tr class="order">
+            <td class="orderNumber">{{this.orderNumber}}</td>
+            <td>{{this.orderTitle}}</td>
+            <td>{{this.createdAt}}</td>
+            <td>{{this.lastName}} {{this.firstName}}</td>
+            <td>{{this.phone}}</td>
+            <td>{{this.orderAmount}} RUB</td>
+            <td>
+                <input class="deliveryDate" type="date" name="desired_time" value="{{#formatDate this.deliveryDate}}{{/formatDate}}">
+            </td>
+            <td>
+                <select class="deliveryTime" name="" id="">
+                    <option value="{{this.deliveryTime}}" selected hidden>{{this.deliveryTime}}</option>
+                    <option value="9:00-12:00">9:00-12:00</option>
+                    <option value="12:00-15:00">12:00-15:00</option>
+                    <option value="15:00-18:00">15:00-18:00</option>
+                    <option value="18:00-21:00">18:00-21:00</option>
+                    <option value="21:00-23:00">21:00-23:00</option>
+                </select></td>
+            <td>
+                <select class="status" name="" id="">
+                    <option value="{{this.status}}" selected hidden>{{this.status}}</option>
+                    <option value="Открыт">Открыт</option>
+                    <option value="Завершен">Завершен</option>
+                    <option value="Передан курьеру">Передан курьеру</option>
+                    <option value="Вручен покупателю">Вручен покупателю</option>
+                    <option value="Аннулирован">Аннулирован</option>
                 </select>
-            </form>
-        </td>
-    </tr>
+            </td>
+        </tr>
     {{/each}}
 </table>

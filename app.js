@@ -15,8 +15,6 @@ const session = require('express-session');
 const mongoose = require('mongoose');
 const MongoStore = require('connect-mongo')(session);
 
-
-
 hbs.registerHelper('ifCond', function(v1, v2, options) {
   if(v1 === v2) {
     return options.fn(this);
@@ -24,11 +22,26 @@ hbs.registerHelper('ifCond', function(v1, v2, options) {
   return options.inverse(this);
 });
 
+
+hbs.registerHelper('formatDate', function(date) {
+    let day = date.getDate();
+    let month = date.getMonth() + 1;
+    let year = date.getFullYear();
+    if((month) < 10) {
+      month = `0${month}`;
+    }
+    if(day < 10) {
+      day = `0${day}`;
+    }
+    return `${year}-${month}-${day}`   
+});
+
 hbs.registerHelper('ifundef', function(v1, options) {
   if(v1 == undefined) {
     return options.fn(this);
   }
   return options.inverse(this);
+
 });
 
 // const app = express();

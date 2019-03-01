@@ -1,12 +1,45 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+
 <style type="text/css">
     body {
-        background-image: url(/imj/sport-2264825_1920.jpg);
-        background-repeat: no-repeat;
+        background:
+            linear-gradient(rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.7)),
+            url(/imj/dna-3539309_1920.jpg);
+
         background-size: 100% auto;
+
 
     }
 
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        color: aliceblue;
+
+    }
+
+    .homeDiv {
+        border: 0px solid gainsboro;
+        border-radius: 5px;
+    }
+
+    #imgHome {
+        width: 50vw;
+        height: auto;
+    }
 </style>
-<div class="Home"></div>
+<div class="grid-container">
+    <div class="homeDiv"><img id="imgHome" src="/imj/int-hero-kit.ea7ff875a583.png"></div>
+    <div class="homeDiv">
+        <h1>Узнайте, что ваша кровь говорит о вас ....</h1><br>
+        <h3>Получить еще более полное понимание вашего состояния. Получите онлайн отчеты ...
+           о здоровье - и многое другое.</h3><br>
+           <h3>2 999 руб.</h3><br>
+           <button id="indexButton"  type="button" class="btn btn-success" >Купить</button>
+           
+    </div>
+</div>
+<script>
+    const indBtn = document.getElementById('indexButton')
+    indBtn.style.setProperty('width' , '200px')
+</script>

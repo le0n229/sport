@@ -1,0 +1,45 @@
+<h1>Администрирование</h1>
+{{#each orderInfo}}
+    <div class="grid">
+        <span>Номер заказа</span>
+        <span>Тип заказа</span>
+        <span>Дата и время заказа</span>
+        <span>Контактное лицо</span>
+        <span>Телефон</span>
+        <span>Сумма заказа</span>
+        <span>Желаемая дата доставки</span>
+        <span>Желаемое время доставки</span>
+        <span>Статус заказа</span>
+        <span>{{this.orderNumber}}</span>
+        <span>{{this.orderTitle}}</span>
+        <span>{{this.createdAt}}</span>
+        <span>{{this.lastName}} {{this.firstName}}</span>
+        <span>{{this.phone}}</span>
+        <span>{{this.orderAmount}} RUB</span>
+        <span><input class="devileryDate" type="date" name="desired_time" value="2018-05-05"></span>
+        <span>
+            <select name="" id="">
+                <option value="" selected hidden>{{this.deliveryTime}}</option>
+                <option value="timePeriod1">9:00-12:00</option>
+                <option value="timePeriod1">12:00-15:00</option>
+                <option value="timePeriod1">15:00-18:00</option>
+                <option value="timePeriod1">18:00-21:00</option>
+                <option value="timePeriod6">21:00-23:00</option>
+            </select></span>
+        <span>
+            <form action="/admins" method="POST">
+                <select name="" id="">
+                    <option value="" selected hidden>{{this.status}}</option>
+                    <option value="open">Открыт</option>
+                    <option value="done">Завершен</option>
+                    <option value="to_courier">Передан курьеру</option>
+                    <option value="delivered">Вручен покупателю</option>
+                    <option value="cancelled">Аннулирован</option>
+                </select>
+            </form>
+        </span>
+    </div>
+</body>
+</html>
+{{/each}}
+
