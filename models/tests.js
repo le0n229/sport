@@ -1,13 +1,15 @@
 const mongoose = require('mongoose');
 
 const testSchema = mongoose.Schema({    
-    userName: String,   
+    userName: String,
+    testDate: Date,
     totalProtein: Number, 
     creatinine: Number,
     urea: Number,
     totalCholesterol: Number,
-    totalBilirubin: Number,
-    date:{type:Date}
+    totalBilirubin: Number
 })
+
+console.log('Done!!!')
 
 module.exports = mongoose.model('Test', testSchema);

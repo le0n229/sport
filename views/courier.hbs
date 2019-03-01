@@ -1,5 +1,5 @@
-{{!-- <script src="/js/courier.js"></script> --}}
-<h1>Cтраничка Курьера:   Текущие заказы</h1>
+<script src="/js/courier.js"></script>
+<h1>Cтраничка Курьера: Текущие заказы</h1>
 <table border="1" cellspacing="0" class="table table-striped">
     <tr>
         <th>номер заказа</th>
@@ -15,7 +15,7 @@
     </tr>
     {{#each orderInfo}}
     <tr class="order" id="{{this._id}}">
-        <td>{{this.orderNumber}}</td>
+        <td class="orderNumber">{{this.orderNumber}}</td>
         <td>{{this.address}}</td>
         <td>{{this.deliveryDate}}</td>
         <td>{{this.deliveryTime}}</td>
@@ -23,6 +23,22 @@
         <td>{{this.lastName}}</td>
         <td>{{this.phone}}</td>
         <td>
+
+            <button name="submit_param" value="ДОСТАВЛЕН" class='delivery'>ДОСТАВЛЕН</button>
+
+        </td>
+        <td class="status">{{this.status}}</td>
+        <td>
+
+            <button name="submit_param" value="ОТМЕНЁН" class='deleteButton'>ОТМЕНИТЬ</button>
+
+        </td>
+    </tr>
+    {{/each}}
+</table>
+
+
+{{!-- <td>
             <form method="post" action='/courier/{{this.id}}'>
                 <button type="submit" name="submit_param" value="ДОСТАВЛЕН" class='delivery'>ДОСТАВЛЕН</button>
             </form>
@@ -30,9 +46,6 @@
         <td>{{this.status}}</td>
         <td>
             <form method="post" action='/courier/{{this.id}}'>
-                <button type="submit" name="submit_param" value="ОТМЕНЁН" class='delete'>ОТМЕНИТЬ</button>
+                <button type="submit" name="submit_param" value="ОТМЕНЁН" class='deleteButton'>ОТМЕНИТЬ</button>
             </form>
-        </td>
-    </tr>
-    {{/each}}
-</table>
+        </td> --}}

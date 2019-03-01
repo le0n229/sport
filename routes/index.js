@@ -72,21 +72,21 @@ router.get('/logout', function (req, res, next) {
 router.get('/courier', async (req, res) => {
   // const orderInfo = await Order.find();
   const orderInfo = await Order.find({ 'status': { $ne: 'ОТМЕНЁН' } });
+  res.render('courier', { orderInfo })
+})
+
+router.post('/courier', async (req, res) => {
+  const orderNumber = req.body.orderNumber;
+  const status = req.body.deliveryStatus;
+  console.log('>>>>>>>orderNumber>>>>>>>' + orderNumber + '>>>status>>>' + status)
+  await Order.findOneAndUpdate(
+    { orderNumber },
+    { status }
+  );
+  
+  res.send(200)
   res.render('courier', { orderInfo: orderInfo, user: req.session.user })
 })
 
-router.post('/courier/:id', async (req, res) => {
-  console.log('>>>>>>>>>>>>>>' + req.body.submit_param + '>>>>>>' + req.params.id)
-  // Order.findOne({ orderNumber: req.params.id }, function (err, usr) {
-  //   Order.status = req.body.submit_param;
-  //   Order.save(function (err) { });
-  // });
-  const order = await Order.findOne({ _id: req.params.id });
-  order.status = req.body.submit_param;
-  await order.save(function (err) { });
-
-  // res.render('courier', { orderInfo })
-  res.redirect('/courier');
-})
 
 module.exports = router;

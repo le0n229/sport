@@ -15,7 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
   //          console.log('respons', respBody);
 
             const statRow = document.getElementById('tabTest')
-            
+            const statTr = document.getElementsByTagName('tr')
+
+            // for(let i of statRow){
+                console.log('СТРОКИ=========================',statTr)
+            // }
 
             for (let i of respBody) {
                 const newRow = document.createElement('tr');
@@ -23,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 tabTest.appendChild(newRow)
                 
                 const idRow = i._id
-                console.log('didididididididididiid', idRow)
+           //     console.log('didididididididididiid', idRow)
                 
                 for (let j = 0; j <1; j++) {
                     console.log(j)
