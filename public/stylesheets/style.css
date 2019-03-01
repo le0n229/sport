@@ -8,6 +8,11 @@ footer {
   background: linear-gradient(rgba(14, 13, 13, 0.6), rgba(26, 25, 25, 0.7)),
 }
 
+.brandName {
+
+  font-family: 'Bowlby One SC', cursive;
+}
+
 a {
   color: #00B7FF;
 }
@@ -72,7 +77,22 @@ a {
 @media (max-width:600px){
   html {
     font-size: 10px;
-  }
-  
+  }  
 }
 
+.form-control {
+  margin: 0 15px;
+}
+
+
+  body {
+    background:
+      linear-gradient(rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.7)),
+      url(/imj/dna-3539309_1920.jpg);
+
+    background-size: 100% auto;
+    align-content: center;
+    padding: 50px;
+    color: white;
+  }
