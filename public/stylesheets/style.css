@@ -53,9 +53,7 @@ a {
 }
 
 .column {
-
   border: 0px solid rgb(27, 27, 27);
-
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), ;
   color: azure;
   padding: 2rem;
@@ -104,6 +102,14 @@ body {
   margin: 30px auto;
 }
 
-.card{
+.card {
   background-color: rgb(4, 45, 68)
+}
+
+.modal-title {
+  color: black;
+}
+
+.form-profile{
+  width: 300px;
 }
