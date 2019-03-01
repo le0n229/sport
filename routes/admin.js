@@ -22,7 +22,8 @@ router.post('/', async (req, res) => {
         { deliveryDate, deliveryTime, status }
     );
 
-    res.send(200)
+    res.send(200);
+    res.redirect('/admins');
 })
 
 module.exports = router;
