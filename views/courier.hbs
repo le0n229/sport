@@ -1,7 +1,7 @@
 <script src="/js/courier.js"></script>
 <h1>Cтраничка Курьера: Текущие заказы</h1>
-<table border="1" cellspacing="0" class="table table-striped">
-    <tr>
+<table border="1" cellspacing="0" class="table table-striped table-dark">
+    <tr class="thead-dark">
         <th>номер заказа</th>
         <th>адрес</th>
         <th>дата доставки</th>
@@ -24,28 +24,15 @@
         <td>{{this.phone}}</td>
         <td>
 
-            <button name="submit_param" value="ДОСТАВЛЕН" class='delivery'>ДОСТАВЛЕН</button>
+            <button name="submit_param" value="ДОСТАВЛЕН" class='delivery btn btn-success'>ДОСТАВЛЕН</button>
 
         </td>
         <td class="status">{{this.status}}</td>
         <td>
 
-            <button name="submit_param" value="ОТМЕНЁН" class='deleteButton'>ОТМЕНИТЬ</button>
+            <button name="submit_param" value="ОТМЕНЁН" class='deleteButton btn btn-danger'>ОТМЕНИТЬ</button>
 
         </td>
     </tr>
     {{/each}}
 </table>
-
-
-{{!-- <td>
-            <form method="post" action='/courier/{{this.id}}'>
-                <button type="submit" name="submit_param" value="ДОСТАВЛЕН" class='delivery'>ДОСТАВЛЕН</button>
-            </form>
-        </td>
-        <td>{{this.status}}</td>
-        <td>
-            <form method="post" action='/courier/{{this.id}}'>
-                <button type="submit" name="submit_param" value="ОТМЕНЁН" class='deleteButton'>ОТМЕНИТЬ</button>
-            </form>
-        </td> --}}
