@@ -11,7 +11,7 @@ const seedsRouter = require('./routes/seeds');
 
 const adminsRouter = require('./routes/admin');
 
-const app = express();
+const app = express()
 const session = require('express-session');
 const mongoose = require('mongoose');
 const MongoStore = require('connect-mongo')(session);
@@ -22,7 +22,6 @@ hbs.registerHelper('ifCond', function(v1, v2, options) {
   }
   return options.inverse(this);
 });
-
 
 hbs.registerHelper('formatDate', function(date) {
     try {let day = date.getDate();
@@ -46,16 +45,13 @@ hbs.registerHelper('ifundef', function(v1, options) {
   }
   return options.inverse(this);
 
-});
-
-// const app = express();
+}); 
 
 const db = mongoose.connect(
   'mongodb://localhost:27017/supersport',
   {
     useNewUrlParser: true
   });
-
 
 app.use(session({
   store: new MongoStore({
@@ -85,12 +81,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-
-app.use('/crm', crmRouter)
-
+app.use('/crm', crmRouter);
 app.use('/admins', adminsRouter);
 app.use('/superseeds', seedsRouter);
-
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
