@@ -117,7 +117,7 @@ router.get('/analizes', async (req, res) => {
     res.redirect('/')
   }
   let testData = await Test.find({userName})
-  res.render('analize', {testData})
+  res.render('analize', {testData, user: req.session.user })
 })
 
 module.exports = router;
