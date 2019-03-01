@@ -8,7 +8,7 @@ const Order = require('../models/order');
 router.get('/', async (req, res) => {
     const orderInfo = await Order.find();
 
-    res.render('admin', { orderInfo })
+    res.render('admin', { orderInfo: orderInfo, user: req.session.user })
 })
 
 router.post('/', async (req, res) => {
