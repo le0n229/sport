@@ -34,7 +34,9 @@ router.post('/login', async (req, res) => {
 
 
 router.get('/login', function (req, res, next) {
-
+  if (req.session.user) {
+    res.redirect('/users')
+  }
   res.render('login', { user: req.session.user });
 });
 
