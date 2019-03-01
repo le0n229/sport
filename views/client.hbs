@@ -1,23 +1,25 @@
-<h1>Добро пожаловать, {{user.firstName}}!</h1><br>
-
-
-<h3><a href="users/neworder">Вызвать курьера</a></h3><br>
-<h3><a href="users/profile">Профиль</a></h3><br>
-<h3><a href="">Подписки</a></h3><br>
-<h3><a href="users/prevorders">Архив заказов</a></h3><br>
-
+<div class="container">
+    <div class="row">
+        <div class="col text-center">
+            <h1>Добро пожаловать, {{user.firstName}}!</h1><br>
+            <h3><a href="users/neworder">Вызвать курьера</a></h3><br>
+            <h3><a href="users/profile">Профиль</a></h3><br>
+            <h3><a href="">Подписки</a></h3><br>
+            <h3><a href="users/prevorders">Архив заказов</a></h3><br>
+            <h3><a href="users/analizes">Архив анализов</a></h3>
+        </div>
+    </div>
+</div>
 {{#ifCond user.userName 'admin'}}
 <form action="users/addadmin" method="post">
     <div>
         <label class="labelClass">Username:</label>
         <input type="text" name="username" />
     </div>
-
     <div>
         <input class="btn btn-primary" type="submit" value="Add Admin" />
     </div>
 </form>
-
 <form action="users/addcourier" method="post">
     <div>
         <label class="labelClass">Username:</label>
@@ -28,5 +30,4 @@
         <input class="btn btn-primary" type="submit" value="Add Courier" />
     </div>
 </form>
-
 {{/ifCond}}
