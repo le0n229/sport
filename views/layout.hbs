@@ -17,7 +17,7 @@
 <body>
 
   <nav class="navbar navbar-expand-md navbar-dark bg-dark h2">
-    <a class="nav-link" href="/">Super Sport</a>
+    <a class="nav-item active" href="/"><b><i>Super Sport</i></b></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbar1"
       aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -27,7 +27,7 @@
 
         {{#ifundef user.userName}}
         <li class="nav-item active">
-          <a class="nav-link" href="/signup">Зарегистрироваться</a>
+          <a class="nav-link" href="/signup">Регистрация</a>
         </li>
         {{/ifundef}}
 
