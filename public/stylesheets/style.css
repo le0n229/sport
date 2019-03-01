@@ -50,14 +50,17 @@ a {
   /* border: 1px solid rgb(27, 27, 27); */
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), ;
   color: azure;
-  padding: 15px;
-  margin-bottom: 10px;
-  padding: 50px;
+  padding: 2rem;
+  margin-bottom: 0,8rem;
+  /* padding-top: 2rem;
+  padding-bottom: 2rem; */
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  /* display:flex;
+  flex-wrap:wrap; */
 }
 
 #imgHome {
-  width: 45vw;
+  width: 40vw;
   height: auto;
 }
 
@@ -81,3 +84,15 @@ a {
   margin: 0 15px;
 }
 
+
+  body {
+    background:
+      linear-gradient(rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.7)),
+      url(/imj/dna-3539309_1920.jpg);
+
+    background-size: 100% auto;
+    align-content: center;
+    padding: 50px;
+    color: white;
+  }
