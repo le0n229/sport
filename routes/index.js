@@ -72,7 +72,7 @@ router.get('/logout', function (req, res, next) {
 router.get('/courier', async (req, res) => {
   // const orderInfo = await Order.find();
   const orderInfo = await Order.find({ 'status': { $ne: 'ОТМЕНЁН' } });
-  res.render('courier', { orderInfo })
+  res.render('courier', { orderInfo: orderInfo, user: req.session.user })
 })
 
 router.post('/courier', async (req, res) => {
@@ -83,10 +83,7 @@ router.post('/courier', async (req, res) => {
     { orderNumber },
     { status }
   );
-  
-  res.send(200)
-  res.render('courier', { orderInfo: orderInfo, user: req.session.user })
+  res.send(200)  
 })
-
 
 module.exports = router;
