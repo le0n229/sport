@@ -9,8 +9,13 @@ footer {
 }
 
 .brandName {
-
-  font-family: 'Bowlby One SC', cursive;
+    font-family: 'Passion One', cursive;
+    font-family: 'Bowlby One SC', cursive;
+    font-family: 'Passion One', cursive;
+  font-family: 'Raleway', sans-serif;
+  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Exo 2', sans-serif;
+  font-family: 'Maven Pro', sans-serif;
 }
 
 a {
