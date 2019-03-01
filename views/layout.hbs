@@ -24,63 +24,112 @@
     </button>
     <div class="collapse navbar-collapse" id="navbar1">
       <ul class="navbar-nav mr-auto">
-
         {{#ifundef user.userName}}
         <li class="nav-item active">
-          <a class="nav-link" href="/signup">Зарегистрироваться</a>
+          <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModalCenter">Зарегистрироваться</a>
         </li>
         {{/ifundef}}
-
         {{#ifCond user.role 'admin'}}
         <li class="nav-item active">
           <a class="nav-link" href="/admins">Администрирование</a>
         </li>
-
         {{/ifCond}}
-
         {{#ifCond user.role 'admin'}}
         <li class="nav-item active">
           <a class="nav-link" href="/crm">CRM</a>
         </li>
-
         {{/ifCond}}
         {{#ifCond user.role 'courier'}}
         <li class="nav-item active">
           <a class="nav-link" href="/courier">Курьер</a>
         </li>
-
         {{/ifCond}}
         {{#ifCond user.role 'admin'}}
         <li class="nav-item active">
           <a class="nav-link" href="/courier">Курьер</a>
         </li>
         {{/ifCond}}
-
-
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="nav-item active">
           <a class="nav-link" href="/users">{{user.userName}}</a>
         </li>
-
         {{#ifundef user.userName}}
         {{else}}
         <li class="nav-item active">
           <a class="nav-link" href="/logout">Выйти</a>
         </li>
-
         {{/ifundef}}
         {{#ifundef user.userName}}
         <li class="nav-item active">
-          <a class="nav-link" href="/login">Войти</a>
+          <a class="nav-link" href="" data-toggle="modal" data-target="#exampleModal">Войти</a>
         </li>
-
         {{/ifundef}}
-
       </ul>
-
     </div>
   </nav>
+
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Регистрация</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body ju">
+          <form action="/signup" method="post" class="text-center">
+            <div class="form-group row">
+              <label class="labelClass col-sm-2 col-form-label"></label>
+              <input class="form-control" type="text" name="username" placeholder="username" />
+            </div>
+            <div class="form-group row">
+              <label class="labelClass col-sm-2 col-form-label"></label>
+              <input class="form-control" type="text" name="email" placeholder="email" />
+            </div>
+            <div class="form-group row">
+              <label class="labelClass col-sm-2 col-form-label"></label>
+              <input class="form-control" type="password" name="password" placeholder="password" />
+            </div>
+            <div class="form-group row  justify-content-center ">
+              <input class="btn btn-primary" type="submit" value="Зарегистрироваться" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Вход в личный кабинет</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body ju">
+          <form action="/login" method="post" class="text-center">
+            <div class="form-group row">
+              <label class="labelClass col-sm-2 col-form-label"></label>
+              <input class="form-control" type="text" name="username" placeholder="username" />
+            </div>
+            <div class="form-group row">
+              <label class="labelClass col-sm-2 col-form-label"></label>
+              <input class="form-control" type="password" name="password" placeholder="password" />
+            </div>
+            <div class="form-group row  justify-content-center ">
+              <input class="btn btn-primary" type="submit" value="Вход" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
   {{{body}}}
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
