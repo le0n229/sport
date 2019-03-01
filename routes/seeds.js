@@ -6,7 +6,7 @@ const Test = require('../models/tests');
 const Order = require('../models/order');
 const faker = require('faker');
 
-let names = ['vadim', 'mikhail', 'rauf', 'vladimir', 'alex', 'vadim1', 'mikhail1', 'rauf1', 'vladimir1', 'alex1'];
+let names = ['vadim', 'mikhail', 'rauf', 'vladimir', 'alex', 'vadim', 'mikhail', 'rauf', 'vladimir', 'alex'];
 let lastNames = ['Петров', 'Иванов', 'Левин', 'Мышкин', 'Сидоров', 'Петров', 'Иванов', 'Левин', 'Мышкин', 'Сидоров'];
 let firstNames = ['Вадим', 'Михаил', 'Рауф', 'Владимир', 'Александр', 'Вадим', 'Михаил', 'Рауф', 'Владимир', 'Александр'];
 
@@ -41,7 +41,7 @@ async function seed() {
         await test.save();
 
         const order = await new Order({
-            userName: 'qwery1',
+            userName: names[i],
             createdAt: faker.date.past(),
             updatedAt: faker.date.past(),
             status: 'Передан курьеру',

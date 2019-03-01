@@ -12,28 +12,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const respBody = await response.json();
 
-  //          console.log('respons', respBody);
-
+            //          console.log('respons', respBody);
             const statRow = document.getElementById('tabTest')
-            const statTr = document.getElementsByTagName('tr')
+            const statTr = statRow.getElementsByTagName('tr')
 
+
+            if (statTr.length > 0) {
+                const td = statTr.getElementsByTagName('td')
+                    (async function () {
+
+
+                        await statTr.removeChild(td)
+                    })
+            }
+
+
+
+
+
+
+            //  const statTd = statTr.getElementsByTagName('td')
             // for(let i of statRow){
-                console.log('СТРОКИ=========================',statTr)
             // }
 
             for (let i of respBody) {
                 const newRow = document.createElement('tr');
                 newRow.id = i._id
                 tabTest.appendChild(newRow)
-                
+
                 const idRow = i._id
-           //     console.log('didididididididididiid', idRow)
-                
-                for (let j = 0; j <1; j++) {
-                    console.log(j)
+                //     console.log('didididididididididiid', idRow)
+
+                for (let j = 0; j < 1; j++) {
+                    //        console.log(j)
                     const newCol = document.createElement('td')
                     const row = document.getElementById(idRow)
-            
+
                     row.insertCell().innerHTML = i.userName
                     row.insertCell().innerHTML = i.date
                     row.insertCell().innerHTML = i.totalProtein
@@ -44,4 +58,3 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     }
 })
-
