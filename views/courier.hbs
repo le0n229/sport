@@ -1,8 +1,6 @@
-<h1>страничка курьера</h1>
-<hr>
-<h2>Текущие заказы</h2><br>
-<hr>
-<table class="table table-bordered table-primary" border="1">
+<script src="/js/courier.js"></script>
+<h1>Cтраничка Курьера: Текущие заказы</h1>
+<table border="1" cellspacing="0" class="table table-striped">
     <tr>
         <th>номер заказа</th>
         <th>адрес</th>
@@ -16,25 +14,38 @@
         <th>отмена</th>
     </tr>
     {{#each orderInfo}}
-    <tr>
-        <td>{{this._id}}</td>
-        <td>{{this.deliveryAdress}}</td>
+    <tr class="order" id="{{this._id}}">
+        <td class="orderNumber">{{this.orderNumber}}</td>
+        <td>{{this.address}}</td>
         <td>{{this.deliveryDate}}</td>
         <td>{{this.deliveryTime}}</td>
         <td>{{this.firstName}}</td>
         <td>{{this.lastName}}</td>
         <td>{{this.phone}}</td>
         <td>
+
+            <button name="submit_param" value="ДОСТАВЛЕН" class='delivery'>ДОСТАВЛЕН</button>
+
+        </td>
+        <td class="status">{{this.status}}</td>
+        <td>
+
+            <button name="submit_param" value="ОТМЕНЁН" class='deleteButton'>ОТМЕНИТЬ</button>
+
+        </td>
+    </tr>
+    {{/each}}
+</table>
+
+
+{{!-- <td>
             <form method="post" action='/courier/{{this.id}}'>
-                <button type="submit" name="submit_param" value="ДОСТАВЛЕН">ДОСТАВЛЕН</button>
+                <button type="submit" name="submit_param" value="ДОСТАВЛЕН" class='delivery'>ДОСТАВЛЕН</button>
             </form>
         </td>
         <td>{{this.status}}</td>
         <td>
             <form method="post" action='/courier/{{this.id}}'>
-                <button type="submit" name="submit_param" value="ОТМЕНЁН">ОТМЕНИТЬ</button>
+                <button type="submit" name="submit_param" value="ОТМЕНЁН" class='deleteButton'>ОТМЕНИТЬ</button>
             </form>
-        </td>
-    </tr>
-    {{/each}}
-</table>
+        </td> --}}
