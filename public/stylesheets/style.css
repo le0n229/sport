@@ -69,7 +69,10 @@ a {
 @media (max-width:600px){
   html {
     font-size: 10px;
-  }
-  
+  }  
+}
+
+.form-control {
+  margin: 0 15px;
 }
 

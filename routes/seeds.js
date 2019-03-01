@@ -21,7 +21,6 @@ async function seed() {
         } else {
             role = '';
         }
-
         const client = await new Client({
             role: role,
             userName: names[i],
@@ -30,7 +29,9 @@ async function seed() {
             lastName: lastNames[i],
             email: faker.internet.email(),
             address: faker.address.streetAddress(),
+
             phone: "7(909)875-43-24",
+
             age: Math.floor(Math.random() * 100),
             height: Math.floor(Math.random() * 200),
             weight: Math.floor(Math.random() * 100)
