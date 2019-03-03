@@ -1,33 +1,32 @@
-<div class="container">
-<div class=" row">
+<h1>Архив заказов</h1>
+<table border="1" cellspacing="0" class="table table-striped table-dark">
+    <tr class="thead-dark">
+        <td>Номер заказа</td>
+        <td>Тип заказа</td>
+        <td>Дата и время заказа</td>
+        <td>Контактное лицо</td>
+        <td>Телефон</td>
+        <td>Желаемая дата доставки</td>
+        <td>Желаемое время доставки</td>
+        <td>Адрес доставки</td>
+        <td>Телефон</td>
+        <td>Статус</td>
+    </tr>
 
-    <div class="col">Номер заказа</div>
-    <div class="col">Тип заказа</div>
-    <div class="col">Дата и время заказа</div>
-    <div class="col">Контактное лицо</div>
-    <div class="col">Телефон</div>
-    <div class="col">Желаемая дата доставки</div>
-    <div class="col">Желаемое время доставки</div>
-    <div class="col">Адрес доставки</div>
-    <div class="col">Телефон</div>
-    <div class="col">Статус</div>
-</div>
+    {{#each order}}
+    <tr>
 
-{{#each order}}
-<div class="prev-grid row">
+        <td>{{orderNumber}}</td>
+        <td>{{orderTitle}}</td>
+        <td>{{createdAt}}</td>
+        <td>{{lastName}} {{firstName}}</td>
+        <td>{{phone}}</td>
+        <td>{{deliveryDate}}</td>
+        <td>{{deliveryTime}}</td>
+        <td>{{address}}</td>
+        <td>{{phone}}</td>
+        <td>{{status}}</td>
 
-    <div class="prev-flex-block">{{orderNumber}}</div>
-    <div class="prev-flex-block">{{orderTitle}}</div>
-    <div class="prev-flex-block">{{createdAt}}</div>
-    <div class="prev-flex-block">{{lastName}} {{firstName}}</div>
-    <div class="prev-flex-block">{{phone}}</div>
-    <div class="prev-flex-block">{{deliveryDate}}</div>
-    <div class="prev-flex-block">{{deliveryTime}}</div>
-    <div class="prev-flex-block">{{address}}</div>
-    <div class="prev-flex-block">{{phone}}</div>
-    <div class="prev-flex-block">{{status}}</div>
-
-</div>
-{{/each}}
-
-</div>
+    </tr>
+    {{/each}}
+</table>

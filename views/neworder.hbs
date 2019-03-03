@@ -1,7 +1,7 @@
 <h2 class="col text-center">Вызов курьера:</h2><br>
-<form class="col text-center" action="neworder" method="POST">
+<form class="col mx-auto form-new-order text-center" action="neworder" method="POST">
     <label for="serviceType">Наименование услуги:</label><br>
-    <select name="serviceType" id="serviceType">
+    <select class="service-type" name="serviceType" id="serviceType">
         <option value="Вызвать курьера с пробиркой">Вызвать курьера с пробиркой</option>
         <option value="Вызвать курьера забрать анализ">Вызвать курьера забрать анализ</option>
         <option value="Вызвать курьера с витаминами">Вызвать курьера с витаминами</option>
@@ -10,19 +10,19 @@
     </select><br><br>
 
     <label for="deliveryAddress">Адрес доставки:</label><br>
-    <input name="deliveryAddress" id="deliveryAddress" placeholder="Берёзовая ул, д.5 кв.17" required></input><br><br>
+    <input class="form-control control-new-order" name="deliveryAddress" id="deliveryAddress" placeholder="Берёзовая ул, д.5 кв.17" required></input><br>
 
 
     <label  for="deliveryDate">Дата доставки:</label><br>
-    <input type="date" name="deliveryDate" id="deliveryDate" required></input><br><br>
+    <input class="form-control control-new-order" type="date" name="deliveryDate" id="deliveryDate" required></input><br>
 
     <label for="deliveryTime">Время доставки:</label><br>
-    <select name="deliveryTime" id="deliveryTime">
+    <select class="delivery-time" name="deliveryTime" id="deliveryTime">
         <option value="9:00-12:00">9:00-12:00</option>
         <option value="12:00-15:00">12:00-15:00</option>
         <option value="15:00-18:00">15:00-18:00</option>
         <option value="18:00-21:00">18:00-21:00</option>
         <option value="21:00-23:00">21:00-23:00</option>
     </select><br><br>
-    <input type="submit" value="Сохранить"></input>
+    <input type="submit" class='delivery btn btn-success' value="Сохранить"></input>
 </form>

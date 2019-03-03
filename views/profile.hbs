@@ -1,31 +1,52 @@
 <h2 class="col text-center">Заполните ваш профиль:</h2><br>
-<form class="col text-center" action="profile" method="POST">
+<form class="col mx-auto form-profile" action="profile" method="POST">
+    <div class="form-group">
+        <label for="firstName">Ваше имя:</label><br>
+        <input class="form-control control-profile" name="firstName" id="firstName" placeholder="Пётр"
+            value={{user.firstName}}></input>
+    </div>
 
-    <label for="firstName">Ваше имя:</label><br>
-    <input name="firstName" id="firstName" placeholder="Пётр" value={{user.firstName}}></input><br><br>
-
-    <label for="lastName">Ваша фамилия:</label><br>
-    <input name="lastName" id="lastName" placeholder="Иванов"value={{user.lastName}}></input><br><br>
-
-    <label for="phone">Телефон</label><br>
-    <input name="phone" id="phone" placeholder="+7 (999) 123-45-67" value={{user.phone}} ></input><br><br>
-
-    <label for="gender">Пол: </label>
-    {{!-- <form> --}}
-       
-        <span><input name="gender" for="gender" type="radio" value="men" {{#ifCond user.gender 'men'}} checked {{/ifCond}}   >муж    </input></span>
-        <span></span><input name="gender" for="gender" type="radio" value="woman" {{#ifCond user.gender 'woman'}} checked {{/ifCond}}>    жен</input></span>
+<div class="form-group">
+<label for="lastName">Ваша фамилия:</label><br>
+    <input class="form-control control-profile" name="lastName" id="lastName" placeholder="Иванов"
+        value={{user.lastName}}></input>
+</div>
+    
+<div class="form-group">
+<label for="phone">Телефон</label><br>
+    <input class="form-control control-profile" name="phone" id="phone" placeholder="+7 (999) 123-45-67"
+        value={{user.phone}}></input>
+</div>
+    
     {{!-- </form> --}}
-<br>
-    <label for="height">Ваш рост:</label><br>
-    <input name="height" id="height" placeholder="180" value={{user.height}} ></input><br><br>
+    <div class="form-group">
+<label for="height">Ваш рост:</label>
+    <input class="form-control control-profile" name="height" id="height" placeholder="180"
+        value={{user.height}}></input>
+    </div>
+    
+<div class="form-group">
+<label for="weight">Ваш вес:</label>
+    <input class="form-control control-profile" name="weight" id="weight" placeholder="75"
+        value={{user.weight}}></input>
+</div>
+    
+<div class="form-group">
+<label for="age">Ваш возраст:</label>
+    <input class="form-control control-profile" name="age" id="age" placeholder="29" value={{user.age}}></input>
 
-    <label for="weight">Ваш вес:</label><br>
-    <input name="weight" id="weight" placeholder="75" value={{user.weight}}></input><br><br>
+</div>
 
-    <label for="age">Ваш возраст:</label><br>
-    <input name="age" id="age" placeholder="29" value={{user.age}}></input><br><br>
+<div class="form-group">
+<label for="gender">Пол: </label>
+    {{!-- <form> --}}
 
-    <input type="submit" value="Сохранить"></input>
+    <span><input name="gender" for="gender" type="radio" value="men" {{#ifCond user.gender 'men'}} checked
+            {{/ifCond}}>муж </input></span>
+    <span></span><input name="gender" for="gender" type="radio" value="woman" {{#ifCond user.gender 'woman'}} checked
+        {{/ifCond}}> жен</input></span>
+</div>
+    
+    <input type="submit" class='delivery btn btn-success' value="Сохранить"></input>
 
 </form>
