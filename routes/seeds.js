@@ -6,24 +6,35 @@ const Test = require('../models/tests');
 const Order = require('../models/order');
 const faker = require('faker');
 
-let names = ['vadim', 'mikhail', 'rauf', 'vladimir', 'alex', 'vadim', 'mikhail', 'rauf', 'vladimir', 'alex'];
-let lastNames = ['Петров', 'Иванов', 'Левин', 'Мышкин', 'Сидоров', 'Петров', 'Иванов', 'Левин', 'Мышкин', 'Сидоров'];
-let firstNames = ['Вадим', 'Михаил', 'Рауф', 'Владимир', 'Александр', 'Вадим', 'Михаил', 'Рауф', 'Владимир', 'Александр'];
+let names = ['vadim', 'mikhail', 'rauf', 'vladimir', 'alex', 'petr', 'vasiliy', 'polina', 'fedor', 'maria'];
+let lastNames = ['Петров', 'Иванов', 'Левин', 'Мышкин', 'Сидоров', 'Петров', 'Иванов', 'Левина', 'Пупков', 'Сидорова'];
+let firstNames = ['Вадим', 'Михаил', 'Рауф', 'Владимир', 'Александр', 'Петр', 'Василий', 'Полина', 'Федор', 'Мария'];
 
 
 async function seed() {
+    let role;
     for (let i = 0; i < names.length; i++) {
+        if (i === 1) {
+            role = 'admin';
+        } else if (i === 2) {
+            role = 'courier';
+        } else {
+            role = '';
+        }
         const client = await new Client({
+            role: role,
             userName: names[i],
             password: '123',
             firstName: firstNames[i],
             lastName: lastNames[i],
             email: faker.internet.email(),
             address: faker.address.streetAddress(),
-            phone: faker.phone.phoneNumber(),
-            age: faker.random.number(),
-            height: faker.random.number(),
-            weight: faker.random.number()
+
+            phone: "7(909)875-43-24",
+
+            age: Math.floor(Math.random() * 100),
+            height: Math.floor(Math.random() * 200),
+            weight: Math.floor(Math.random() * 100)
         })
 
         await client.save();
@@ -48,8 +59,8 @@ async function seed() {
             deliveryDate: new Date(),
             deliveryTime: '12:00-15:00',
             address: faker.address.streetAddress(),
-            firstName: firstNames[0],
-            lastName: lastNames[0],
+            firstName: firstNames[i],
+            lastName: lastNames[i],
             phone: '8-905-567-98-75',
             orderAmount: 11200,
             orderTitle: 'Забрать кровь'
