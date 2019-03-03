@@ -23,7 +23,7 @@
 <body>
 
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <a class="navbar-brand brandName" href="/"><h1>Super HEALTH</h1></a>
+    <a class="navbar-brand brandName" href="/"><h1><i class="fas fa-heart"></i> Super HEALTH</h1></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbar1"
       aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -40,22 +40,22 @@
         {{/ifundef}}
         {{#ifCond user.role 'admin'}}
         <li class="nav-item active">
-          <a class="nav-link" href="/admins"><i class="fas fa-tools"></i></a>
+          <a class="nav-link" href="/admins"><i class="fas fa-tools"></i> администратор</a>
         </li>
         {{/ifCond}}
         {{#ifCond user.role 'admin'}}
         <li class="nav-item active">
-          <a class="nav-link" href="/crm"><i class="fas fa-cash-register"></i></a>
+          <a class="nav-link" href="/crm"><i class="fas fa-cash-register"></i> crm</a>
         </li>
         {{/ifCond}}
         {{#ifCond user.role 'courier'}}
         <li class="nav-item active">
-          <a class="nav-link" href="/courier"><i class="fas fa-user-lock"></i></a>
+          <a class="nav-link" href="/courier"><i class="fas fa-user-lock"></i> курьер</a>
         </li>
         {{/ifCond}}
         {{#ifCond user.role 'admin'}}
         <li class="nav-item active">
-          <a class="nav-link" href="/courier"><i class="fas fa-user-lock"></i></a>
+          <a class="nav-link" href="/courier"><i class="fas fa-user-lock"></i> курьер</a>
         </li>
         {{/ifCond}}
  
@@ -65,13 +65,13 @@
         {{#ifundef user.userName}}
         {{else}}
         <li class="nav-item active">
-          <a class="nav-link" href="/logout"><i class="fas fa-sign-out-alt"></i></a>
+          <a class="nav-link" href="/logout"><i class="fas fa-sign-out-alt"></i> выйти</a>
         </li>
         {{/ifundef}}
 
         {{#ifundef user.userName}}
         <li class="nav-item active">
-          <a class="nav-link" href="" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-sign-in-alt"></i> Войти</a>
+          <a class="nav-link" href="" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-sign-in-alt"></i> войти</a>
         </li>
         {{/ifundef}}
       </ul>

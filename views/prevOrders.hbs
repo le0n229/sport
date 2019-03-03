@@ -1,19 +1,20 @@
-<div class="prev-grid prev-header">
+<div class="container">
+<div class=" row">
 
-    <div class="prev-flex-block">Номер заказа</div>
-    <div class="prev-flex-block">Тип заказа</div>
-    <div class="prev-flex-block">Дата и время заказа</div>
-    <div class="prev-flex-block">Контактное лицо</div>
-    <div class="prev-flex-block">Телефон</div>
-    <div class="prev-flex-block">Желаемая дата доставки</div>
-    <div class="prev-flex-block">Желаемое время доставки</div>
-    <div class="prev-flex-block">Адрес доставки</div>
-    <div class="prev-flex-block">Телефон</div>
-    <div class="prev-flex-block">Статус</div>
+    <div class="col">Номер заказа</div>
+    <div class="col">Тип заказа</div>
+    <div class="col">Дата и время заказа</div>
+    <div class="col">Контактное лицо</div>
+    <div class="col">Телефон</div>
+    <div class="col">Желаемая дата доставки</div>
+    <div class="col">Желаемое время доставки</div>
+    <div class="col">Адрес доставки</div>
+    <div class="col">Телефон</div>
+    <div class="col">Статус</div>
 </div>
 
 {{#each order}}
-<div class="prev-grid">
+<div class="prev-grid row">
 
     <div class="prev-flex-block">{{orderNumber}}</div>
     <div class="prev-flex-block">{{orderTitle}}</div>
@@ -28,3 +29,5 @@
 
 </div>
 {{/each}}
+
+</div>
