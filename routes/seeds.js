@@ -6,7 +6,7 @@ const Test = require('../models/tests');
 const Order = require('../models/order');
 const faker = require('faker');
 
-let names = ['vadim', 'mikhail', 'rauf', 'vladimir', 'alex', 'petr', 'vasiliy', 'polina', 'fedor', 'maria'];
+let names = ['user1', 'user2', 'user3', 'user4', 'user5', 'petr', 'vasiliy', 'polina', 'fedor', 'maria'];
 let lastNames = ['Петров', 'Иванов', 'Левин', 'Мышкин', 'Сидоров', 'Петров', 'Иванов', 'Левина', 'Пупков', 'Сидорова'];
 let firstNames = ['Вадим', 'Михаил', 'Рауф', 'Владимир', 'Александр', 'Петр', 'Василий', 'Полина', 'Федор', 'Мария'];
 
