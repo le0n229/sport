@@ -9,32 +9,50 @@
 
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Exo+2:900|Maven+Pro:900|Noto+Sans:700|Passion+One|Raleway:900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Exo+2:900|Maven+Pro:900|Noto+Sans:700|Passion+One|Raleway:900"
+    rel="stylesheet">
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
 
   <link rel='stylesheet' href='/stylesheets/style.css' />
   <meta name="Description" content="Service for good health">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    (function (d, w, c) {
+      w.ChatraID = 'ZqhrN9h3AgvJ3Y23q';
+      var s = d.createElement('script');
+      w[c] = w[c] || function () {
+        (w[c].q = w[c].q || []).push(arguments);
+      };
+      s.async = true;
+      s.src = 'https://call.chatra.io/chatra.js';
+      if (d.head) d.head.appendChild(s);
+    })(document, window, 'Chatra');
+  </script>
 </head>
 
 <body>
 
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <a class="navbar-brand brandName" href="/"><h1>I  <i class="fas fa-heart"></i> Super HEALTH</h1></a>
+    <a class="navbar-brand brandName" href="/">
+      <h1>I <i class="fas fa-heart"></i> Super HEALTH</h1>
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbar1"
       aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbar1">
-      <ul class="navbar-nav mr-auto"></ul>             
+      <ul class="navbar-nav mr-auto"></ul>
       <ul class="nav navbar-nav navbar-right">
         {{#ifundef user.userName}}
         <li class="nav-item active">
 
-          <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-user-plus"></i> Регистрация</a>
+          <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModalCenter"><i
+              class="fas fa-user-plus"></i> Регистрация</a>
 
         </li>
         {{/ifundef}}
@@ -58,7 +76,7 @@
           <a class="nav-link" href="/courier"><i class="fas fa-user-lock"></i> курьер</a>
         </li>
         {{/ifCond}}
- 
+
         <li class="nav-item active">
           <a class="nav-link" href="/users">{{user.userName}}</a>
         </li>
@@ -71,7 +89,8 @@
 
         {{#ifundef user.userName}}
         <li class="nav-item active">
-          <a class="nav-link" href="" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-sign-in-alt"></i> войти</a>
+          <a class="nav-link" href="" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-sign-in-alt"></i>
+            войти</a>
         </li>
         {{/ifundef}}
       </ul>
@@ -151,4 +170,5 @@
     integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
 </body>
+
 </html>
