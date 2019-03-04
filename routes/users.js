@@ -6,7 +6,11 @@ const Test = require('../models/tests');
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
-  res.render('client', { user: req.session.user });
+  if (req.session.user != undefined) {
+    res.render('client', { user: req.session.user });
+  } else {
+    res.redirect('/login');
+  }
 });
 
 
@@ -17,7 +21,7 @@ router.get('/profile', function (req, res, next) {
 
 
 router.post('/profile', async function (req, res, next) {
- await Users.updateOne({ _id: req.session.user._id }, {
+  await Users.updateOne({ _id: req.session.user._id }, {
     firstName: req.body.firstName,
     lastName: req.body.lastName,
     address: req.body.address,
@@ -67,7 +71,7 @@ router.post('/neworder', async function (req, res, next) {
     address: req.body.deliveryAddress,
     firstName: req.session.user.firstName,
     lastName: req.session.user.lastName,
-    phone: req.session.user.phone,  
+    phone: req.session.user.phone,
     orderTitle: req.body.serviceType,
   });
   await order.save();
@@ -81,7 +85,11 @@ router.post('/neworder', async function (req, res, next) {
 });
 
 router.get('/neworder', function (req, res, next) {
-  res.render('neworder', { user: req.session.user });
+  if (req.session.user != undefined) {
+    res.render('neworder', { user: req.session.user });
+  } else {
+    res.redirect('/login');
+  }
 });
 
 
@@ -116,8 +124,8 @@ router.get('/analizes', async (req, res) => {
   if (!userName) {
     res.redirect('/')
   }
-  let testData = await Test.find({userName})
-  res.render('analize', {testData, user: req.session.user })
+  let testData = await Test.find({ userName })
+  res.render('analize', { testData, user: req.session.user })
 })
 
 module.exports = router;
