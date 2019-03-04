@@ -40,8 +40,13 @@ a {
 
 .prev-grid {
   display: grid;
-  grid-template-columns: repeat(10, 10%);
+  /* grid-template-columns: repeat(10, 10%); */
   border: 1px solid black;
+}
+
+.prev-flex-block {
+  min-width:100px;
+
 }
 
 .half {
@@ -93,7 +98,7 @@ body {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(/imj/dna-3539309_1920.jpg);
   background-size: 100% auto;
   align-content: center;
-  padding: 50px;
+  padding: 2rem;
   color: white;
 }
 
